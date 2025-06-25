@@ -54,11 +54,10 @@ const DemoTour = () => {
               "Запуск чата в мессенджере",
               "Переход в модуль бронирования",
               "Быстрая работа со всех устройств",
-              "Многое другое...",
             ].map((feature, index) => (
               <span
                 key={index}
-                className="bg-gold/10 text-gold px-4 py-2 rounded-full text-sm"
+                className="bg-white text-gold border border-gold px-4 py-2 rounded-full text-sm shadow-sm"
               >
                 {feature}
               </span>
