@@ -168,9 +168,10 @@ const ProblemSolution = () => {
         <div className="bg-gray-50 rounded-2xl p-12 mb-16 animate-fade-in">
           <h3 className="text-3xl font-light text-center mb-8">Решение</h3>
           <blockquote className="text-xl md:text-2xl text-center leading-relaxed text-text italic">
-            "3D-тур — это не фото. Гость идёт по залам, рассматривает детали,
-            чувствует масштаб и сразу влюбляется в Ваше пространство. Это
-            эмоциональное погружение, которое продаёт."
+            "3D-тур — это не просто фото: гость свободно гуляет по залам,
+            разглядывает детали, чувствует масштаб и сразу влюбляется в Ваше
+            пространство. Такое эмоциональное погружение усиливает доверие и
+            продаёт."
           </blockquote>
         </div>
 
