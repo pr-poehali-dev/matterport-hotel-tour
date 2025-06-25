@@ -129,19 +129,19 @@ const ProblemSolution = () => {
                     <img
                       src="https://cdn.poehali.dev/files/c966b33e-85bb-4f51-bbd8-8aff11bd8d09.png"
                       alt="Статичный контент"
-                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:rotate-[360deg] relative z-10"
+                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:[transform:rotateY(360deg)] relative z-10"
                     />
                   ) : index === 1 ? (
                     <img
                       src="https://cdn.poehali.dev/files/ec7b85f6-38f5-43e9-ae66-54e3f7488690.png"
                       alt="Ограниченное взаимодействие с фото/видео"
-                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:rotate-[360deg] relative z-10"
+                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:[transform:rotateY(360deg)] relative z-10"
                     />
                   ) : index === 3 ? (
                     <img
                       src="https://cdn.poehali.dev/files/1ec14ca3-52e5-411a-94a9-6d25161b6f8b.png"
                       alt="Фото не показывают 100% пространства"
-                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:rotate-[360deg] relative z-10"
+                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:[transform:rotateY(360deg)] relative z-10"
                     />
                   ) : (
                     <span className="text-2xl">📸</span>
