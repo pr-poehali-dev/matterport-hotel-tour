@@ -31,7 +31,7 @@ const Portfolio = () => {
       title: "21 стол, 2 банкетных зала",
       iframe: `<iframe width="853" height="480" src="https://3d.bogdarnya.ru/6pxyC6jtytC/?m=6pxyC6jtytC&hl=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>`,
       description:
-        'Ресторан "Колхозный клуб", настоящий центр русской и европейской гастрономии, музей подлинной сельской культуры',
+        "Центр русской и европейской гастрономии, музей подлинной сельской культуры",
       link: "https://bogdarnya.ru/food/restoran-kolkhoznyy-klub",
       buttonText: "Посмотреть тур на сайте ресторана",
     },
