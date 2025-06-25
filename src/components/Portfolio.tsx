@@ -4,10 +4,11 @@ import { Card, CardContent } from "@/components/ui/card";
 const Portfolio = () => {
   const projects = [
     {
-      title: "Бутик-отель в центре Москвы",
-      image:
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop",
-      description: "Элегантные номера и общественные зоны премиум-класса",
+      title: "Отель Богдарня",
+      iframe: `<iframe width="853" height="480" src="https://3d.bogdarnya.ru/AC5PHGftup4/?m=AC5PHGftup4&hl=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>`,
+      description: "20 номеров с уникальным дизайном",
+      link: "https://bogdarnya.ru/catalog/otel-bogdarnya",
+      buttonText: "Посмотреть тур на сайте отеля",
     },
     {
       title: "Дизайнерские апартаменты",
@@ -47,12 +48,21 @@ const Portfolio = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300" />
+                {project.iframe ? (
+                  <div
+                    className="w-full h-64 [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:object-cover"
+                    dangerouslySetInnerHTML={{ __html: project.iframe }}
+                  />
+                ) : (
+                  <>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300" />
+                  </>
+                )}
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
@@ -60,8 +70,11 @@ const Portfolio = () => {
                 <Button
                   variant="outline"
                   className="w-full group-hover:bg-gold group-hover:text-white group-hover:border-gold transition-all duration-300"
+                  onClick={() =>
+                    project.link && window.open(project.link, "_blank")
+                  }
                 >
-                  Посмотреть тур
+                  {project.buttonText || "Посмотреть тур"}
                 </Button>
               </CardContent>
             </Card>
