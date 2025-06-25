@@ -20,10 +20,10 @@ const Hero = () => {
               </div>
               <div className="hidden md:flex space-x-6">
                 <button
-                  onClick={() => scrollToSection("problems")}
+                  onClick={() => scrollToSection("demo-tour")}
                   className="text-gray-700 hover:text-[#d4af37] transition-colors"
                 >
-                  Проблемы
+                  Попробовать 3D-тур
                 </button>
                 <button
                   onClick={() => scrollToSection("portfolio")}
@@ -32,40 +32,16 @@ const Hero = () => {
                   Портфолио
                 </button>
                 <button
-                  onClick={() => scrollToSection("results")}
-                  className="text-gray-700 hover:text-[#d4af37] transition-colors"
-                >
-                  Результаты
-                </button>
-                <button
                   onClick={() => scrollToSection("testimonials")}
                   className="text-gray-700 hover:text-[#d4af37] transition-colors"
                 >
                   Отзывы
                 </button>
                 <button
-                  onClick={() => scrollToSection("process")}
-                  className="text-gray-700 hover:text-[#d4af37] transition-colors"
-                >
-                  Процесс работы
-                </button>
-                <button
                   onClick={() => scrollToSection("pricing")}
                   className="text-gray-700 hover:text-[#d4af37] transition-colors"
                 >
                   Цены
-                </button>
-                <button
-                  onClick={() => scrollToSection("calculator")}
-                  className="text-gray-700 hover:text-[#d4af37] transition-colors"
-                >
-                  Калькулятор
-                </button>
-                <button
-                  onClick={() => scrollToSection("contacts")}
-                  className="text-gray-700 hover:text-[#d4af37] transition-colors"
-                >
-                  Контакты
                 </button>
               </div>
             </div>
