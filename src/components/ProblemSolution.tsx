@@ -166,25 +166,7 @@ const ProblemSolution = () => {
 
         {/* Solution */}
         <div className="bg-gray-50 rounded-2xl p-12 mb-16 animate-fade-in">
-          <h3 className="text-3xl font-light text-center mb-8 relative flex items-end justify-center gap-3">
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              className="text-yellow-500 flex-shrink-0 mb-1"
-              fill="currentColor"
-            >
-              {/* Elegant Golden Checkmark */}
-              <path
-                d="M8 16 L14 20 L24 8"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-                className="drop-shadow-sm"
-              />
-            </svg>
+          <h3 className="text-3xl font-light text-center mb-8">
             Эффект присутствия и свободы передвижения
           </h3>
           <blockquote className="text-xl md:text-2xl text-center leading-relaxed text-text italic">
