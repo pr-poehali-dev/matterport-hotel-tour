@@ -17,19 +17,15 @@ const DemoTour = () => {
         {/* Demo iframe placeholder */}
         <div className="max-w-6xl mx-auto mb-12 animate-fade-in">
           <div className="relative aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-300 to-gray-400">
-              <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-4 bg-gold/20 rounded-full flex items-center justify-center">
-                  <span className="text-2xl">🏨</span>
-                </div>
-                <p className="text-xl font-medium text-gray-700">
-                  Matterport Demo Tour
-                </p>
-                <p className="text-gray-600">
-                  Интерактивный 3D-тур загружается...
-                </p>
-              </div>
-            </div>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://my.matterhub.ru/8/4PMaut6Zba5/?m=4PMaut6Zba5&hl=1"
+              frameBorder="0"
+              allowFullScreen
+              allow="xr-spatial-tracking"
+              className="absolute inset-0 w-full h-full"
+            />
           </div>
         </div>
 
