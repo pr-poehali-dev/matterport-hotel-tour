@@ -127,8 +127,8 @@ const ProblemSolution = () => {
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gold/10 transition-colors">
                   <Icon name={problem.icon} size={24} className="text-gold" />
                 </div>
-                <h3 className="text-base font-medium mb-2">{problem.title}</h3>
-                <p className="text-lg text-black">{problem.description}</p>
+                <h3 className="text-lg font-medium mb-2">{problem.title}</h3>
+                <p className="text-black">{problem.description}</p>
               </div>
             ))}
           </div>
