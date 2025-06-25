@@ -1,6 +1,13 @@
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with reception photo and parallax effect */}
@@ -33,6 +40,7 @@ const Hero = () => {
           <Button
             className="text-lg px-10 py-6 text-white hover:opacity-90 transition-opacity"
             style={{ backgroundColor: "#d4af37" }}
+            onClick={() => scrollToSection("demo-tour")}
           >
             Смотреть пример
           </Button>
@@ -43,6 +51,7 @@ const Hero = () => {
               borderColor: "#d4af37",
               color: "#d4af37",
             }}
+            onClick={() => scrollToSection("final-cta")}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#d4af37";
               e.currentTarget.style.color = "#111111";
