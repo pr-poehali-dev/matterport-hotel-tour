@@ -23,7 +23,7 @@ const Portfolio = () => {
       title: "8 апартаментов, переговорная, лаунж зона",
       iframe: `<iframe width="853" height="480" src="https://my.matterhub.ru/8/yhmcys2nrfN/?m=yhmcys2nrfN&hl=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>`,
       description:
-        "Бутик апарт-отель Окно. Синтез современности и особенной аутентичности русской культуры",
+        'Наследие Петра I в современном интерьере апарт-отеля "Окно"',
       link: "https://oknohotel.com/3d-tur/",
       buttonText: "Посмотреть тур на сайте отеля",
     },
