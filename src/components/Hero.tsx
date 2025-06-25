@@ -44,7 +44,7 @@ const Hero = () => {
             </div>
             <a
               href="tel:+79190223316"
-              className="text-[#d4af37] font-semibold hover:text-[#b8941f] transition-colors text-lg ml-8"
+              className="text-[#d4af37] font-semibold hover:text-[#b8941f] transition-colors text-lg ml-8 whitespace-nowrap"
             >
               +7 919 022 33 16
             </a>
