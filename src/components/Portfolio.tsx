@@ -28,6 +28,13 @@ const Portfolio = () => {
       buttonText: "Посмотреть тур на сайте отеля",
     },
     {
+      title:
+        "Современная моторная яхта Adelya (Leomar, длина 20 м) — это идеальный выбор для аренды яхты в Анталии",
+      iframe: `<iframe width="853" height="480" src="https://my.matterhub.ru/8/CtoYyhXJQQr/&hl=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>`,
+      description:
+        "Роскошная моторная яхта для незабвенного отдыха на средиземноморском побережье",
+    },
+    {
       title: "21 стол, 2 банкетных зала",
       iframe: `<iframe width="853" height="480" src="https://3d.bogdarnya.ru/6pxyC6jtytC/?m=6pxyC6jtytC&hl=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>`,
       description:
