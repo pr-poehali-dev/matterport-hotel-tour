@@ -9,13 +9,13 @@ const MessengerButtons = () => {
       name: "WhatsApp",
       icon: "MessageCircle",
       color: "bg-green-500 hover:bg-green-600",
-      href: "https://wa.me/79999999999",
+      href: "https://wa.me/79190223316",
     },
     {
       name: "Telegram",
       icon: "Send",
       color: "bg-blue-500 hover:bg-blue-600",
-      href: "https://t.me/yourusername",
+      href: "https://t.me/Cap_Rizo",
     },
   ];
 
