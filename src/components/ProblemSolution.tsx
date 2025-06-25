@@ -1,4 +1,84 @@
 import Icon from "@/components/ui/icon";
+import { useEffect, useRef, useState } from "react";
+
+const AnimatedStat = ({
+  value,
+  label,
+  delay,
+}: {
+  value: string;
+  label: string;
+  delay: number;
+}) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [displayValue, setDisplayValue] = useState("0");
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 },
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const timer = setTimeout(() => {
+      const numericValue = value.match(/\d+/)?.[0];
+      const prefix = value.match(/^[^\d]*/)?.[0] || "";
+      const suffix = value.match(/[^\d]*$/)?.[0] || "";
+
+      if (numericValue) {
+        const target = parseInt(numericValue);
+        let current = 0;
+        const increment = target / 30;
+        const duration = 1500;
+        const stepTime = duration / 30;
+
+        const counter = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            setDisplayValue(value);
+            clearInterval(counter);
+          } else {
+            setDisplayValue(`${prefix}${Math.floor(current)}${suffix}`);
+          }
+        }, stepTime);
+
+        return () => clearInterval(counter);
+      } else {
+        setDisplayValue(value);
+      }
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, [isVisible, value, delay]);
+
+  return (
+    <div
+      ref={ref}
+      className={`text-center transform transition-all duration-1000 ${
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+      }`}
+    >
+      <div className="text-4xl md:text-5xl font-light text-gold mb-2">
+        {displayValue}
+      </div>
+      <p className="text-black">{label}</p>
+    </div>
+  );
+};
 
 const ProblemSolution = () => {
   const problems = [
@@ -65,14 +145,14 @@ const ProblemSolution = () => {
         </div>
 
         {/* Statistics */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-light text-gold mb-2">
-                {stat.value}
-              </div>
-              <p className="text-black">{stat.label}</p>
-            </div>
+            <AnimatedStat
+              key={index}
+              value={stat.value}
+              label={stat.label}
+              delay={index * 200}
+            />
           ))}
         </div>
       </div>
