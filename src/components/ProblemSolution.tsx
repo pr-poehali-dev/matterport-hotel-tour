@@ -88,9 +88,9 @@ const ProblemSolution = () => {
       description: "Фото не передают атмосферу",
     },
     {
-      icon: "Ruler",
-      title: "Нет ощущения масштаба",
-      description: "Гость не понимает планировку",
+      icon: "Camera",
+      title: "Фото не показывают 100% пространства",
+      description: "Важные фрагменты остаются за кадром",
     },
     {
       icon: "MousePointerClick",
