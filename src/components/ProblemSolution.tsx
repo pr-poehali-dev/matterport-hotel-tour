@@ -127,7 +127,7 @@ const ProblemSolution = () => {
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gold/10 transition-all duration-500 overflow-visible relative">
                   {index === 0 ? (
                     <img
-                      src="https://cdn.poehali.dev/files/c966b33e-85bb-4f51-bbd8-8aff11bd8d09.png"
+                      src="https://cdn.poehali.dev/files/ccf05c53-3bb3-4e41-b46d-db24505a4785.png"
                       alt="Статичный контент"
                       className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:rotate-[360deg] relative z-10"
                     />
