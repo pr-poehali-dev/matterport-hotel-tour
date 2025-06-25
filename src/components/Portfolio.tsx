@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const Portfolio = () => {
   const projects = [
     {
-      title: "21 апартамент с уникальным дизайном",
+      title: "21 апартамент",
       iframe: `<iframe width="853" height="480" src="https://my.matterhub.ru/8/QZqpS4y9ggq/?m=QZqpS4y9ggq&hl=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>`,
       description:
         "Гармония истории и современности в уникальных апартаментах на Новом Арбате",
@@ -12,7 +12,7 @@ const Portfolio = () => {
       buttonText: "Посмотреть тур на сайте апартаментов",
     },
     {
-      title: "20 номеров с уникальным дизайном",
+      title: "20 номеров",
       iframe: `<iframe width="853" height="480" src="https://3d.bogdarnya.ru/AC5PHGftup4/?m=AC5PHGftup4&hl=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>`,
       description:
         "Место возрождения русской культуры и быта в отеле «Богдарня»",
