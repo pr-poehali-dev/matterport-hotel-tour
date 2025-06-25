@@ -133,9 +133,9 @@ const ProblemSolution = () => {
                     />
                   ) : index === 1 ? (
                     <img
-                      src="https://cdn.poehali.dev/files/d8258605-f704-4c68-af55-bd86f1243b2a.png"
-                      alt="Низкое вовлечение. Посетители быстрее покидают сайт"
-                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:rotate-12 relative z-10"
+                      src="https://cdn.poehali.dev/files/ec7b85f6-38f5-43e9-ae66-54e3f7488690.png"
+                      alt="Ограниченное взаимодействие с фото/видео"
+                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:rotate-[360deg] relative z-10"
                     />
                   ) : index === 3 ? (
                     <img
