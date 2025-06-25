@@ -8,7 +8,7 @@ const Hero = () => {
         <div
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+            backgroundImage: `url('https://cdn.poehali.dev/files/59607296-85f7-4ab2-b035-4140a35ceadd.png')`,
             animation: "parallax-float 8s ease-in-out infinite",
           }}
         />
