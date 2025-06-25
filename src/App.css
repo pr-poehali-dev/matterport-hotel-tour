@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes blink-top {
+  0%,
+  90%,
+  100% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  95%,
+  98% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes blink-bottom {
+  0%,
+  90%,
+  100% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  95%,
+  98% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-blink-top {
+  animation: blink-top 4s ease-in-out infinite;
+}
+
+.animate-blink-bottom {
+  animation: blink-bottom 4s ease-in-out infinite;
+}

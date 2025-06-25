@@ -167,7 +167,55 @@ const ProblemSolution = () => {
         {/* Solution */}
         <div className="bg-gray-50 rounded-2xl p-12 mb-16 animate-fade-in">
           <h3 className="text-3xl font-light text-center mb-8 relative flex items-center justify-center gap-3">
-            <Icon name="Eye" size={32} className="text-blue-600" />
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              className="text-yellow-500"
+            >
+              {/* Глазное яблоко */}
+              <ellipse
+                cx="16"
+                cy="16"
+                rx="15"
+                ry="10"
+                fill="white"
+                stroke="#d4af37"
+                strokeWidth="1"
+              />
+
+              {/* Радужка */}
+              <circle cx="16" cy="16" r="7" fill="url(#irisGradient)" />
+
+              {/* Зрачок */}
+              <circle cx="16" cy="16" r="3" fill="#1a1a1a" />
+
+              {/* Блик */}
+              <circle cx="14" cy="13" r="1.5" fill="white" opacity="0.8" />
+
+              {/* Верхнее веко (анимированное) */}
+              <path
+                d="M 1 16 Q 16 6 31 16 Q 16 16 1 16"
+                fill="#d4af37"
+                className="animate-blink-top"
+              />
+
+              {/* Нижнее веко (анимированное) */}
+              <path
+                d="M 1 16 Q 16 26 31 16 Q 16 16 1 16"
+                fill="#d4af37"
+                className="animate-blink-bottom"
+              />
+
+              {/* Градиенты */}
+              <defs>
+                <radialGradient id="irisGradient" cx="0.3" cy="0.3">
+                  <stop offset="0%" stopColor="#ffd700" />
+                  <stop offset="70%" stopColor="#daa520" />
+                  <stop offset="100%" stopColor="#b8860b" />
+                </radialGradient>
+              </defs>
+            </svg>
             Эффект присутствия и свободы передвижения
           </h3>
           <blockquote className="text-xl md:text-2xl text-center leading-relaxed text-text italic">
