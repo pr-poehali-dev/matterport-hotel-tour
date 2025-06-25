@@ -36,14 +36,17 @@ const DemoTour = () => {
           <div className="flex items-center justify-center gap-3 mb-8">
             <div className="relative">
               <Icon
-                name="Headphones"
+                name="Heart"
                 size={40}
-                className="text-purple-500 animate-pulse"
+                className="text-yellow-500 animate-pulse"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-500 rounded-full opacity-20 animate-ping"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full opacity-20 animate-ping"></div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Возможности 3D-VR тура
+            <h2 className="text-3xl md:text-4xl font-bold">
+              <span className="text-black">Возможности тура</span>{" "}
+              <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">
+                3D-VR
+              </span>
             </h2>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
