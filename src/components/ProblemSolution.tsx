@@ -25,10 +25,10 @@ const ProblemSolution = () => {
   ];
 
   const stats = [
-    { value: "+87%", label: "просмотров и лидов" },
-    { value: "54%", label: "гостей не приедут без тура" },
-    { value: "3×", label: "дольше на сайте" },
-    { value: "+41%", label: "кликов в Google" },
+    { value: "+87%", label: "просмотров" },
+    { value: "54%", label: "не приедут без тура" },
+    { value: "х3", label: "дольше на сайте" },
+    { value: "+41%", label: "бронирований" },
   ];
 
   return (
