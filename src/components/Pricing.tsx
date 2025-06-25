@@ -89,7 +89,7 @@ const Pricing = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Тарифы</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Выберите оптимальный пакет для вашего объекта
+              Выберите оптимальный пакет для Вашего пространства
             </p>
           </div>
 

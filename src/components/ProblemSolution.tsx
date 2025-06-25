@@ -59,8 +59,8 @@ const ProblemSolution = () => {
           <h3 className="text-3xl font-light text-center mb-8">Решение</h3>
           <blockquote className="text-xl md:text-2xl text-center leading-relaxed text-text italic">
             "3D-тур — это не фото. Гость идёт по залам, рассматривает детали,
-            чувствует масштаб и сразу влюбляется в ваш объект. Это эмоциональное
-            погружение, которое продаёт."
+            чувствует масштаб и сразу влюбляется в Ваше пространство. Это
+            эмоциональное погружение, которое продаёт."
           </blockquote>
         </div>
 

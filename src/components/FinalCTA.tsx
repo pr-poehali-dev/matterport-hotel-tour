@@ -30,7 +30,7 @@ const FinalCTA = () => {
           </h2>
           <p className="text-xl opacity-90 mb-8">
             Получите индивидуальное предложение и узнайте, как виртуальные туры
-            помогут вашему бизнесу
+            помогут Вашему бизнесу
           </p>
         </div>
 
@@ -53,7 +53,7 @@ const FinalCTA = () => {
                   <Input
                     id="name"
                     type="text"
-                    placeholder="Введите ваше имя"
+                    placeholder="Введите Ваше имя"
                     value={formData.name}
                     onChange={(e) => handleChange("name", e.target.value)}
                     className="mt-2 h-12 focus:ring-gold focus:border-gold"
@@ -84,7 +84,7 @@ const FinalCTA = () => {
                   style={{ animationDelay: "0.3s" }}
                 >
                   <Label htmlFor="area" className="text-gray-700 font-medium">
-                    Площадь объекта (м²)
+                    Площадь пространства (м²)
                   </Label>
                   <Input
                     id="area"

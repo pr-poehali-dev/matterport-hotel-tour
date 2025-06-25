@@ -43,7 +43,8 @@ const Calculator = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Калькулятор стоимости</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Узнайте примерную стоимость виртуального тура для вашего объекта
+            Узнайте примерную стоимость виртуального тура для Вашего
+            пространства
           </p>
         </div>
 
