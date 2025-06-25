@@ -1,3 +1,5 @@
+import Icon from "@/components/ui/icon";
+
 const DemoTour = () => {
   const tips = [
     "Посмотрите инфо-метки",
@@ -31,23 +33,35 @@ const DemoTour = () => {
 
         {/* Features */}
         <div className="mt-16 text-center animate-fade-in">
-          <p className="text-lg text-black mb-4">Возможности Matterport:</p>
+          <p className="text-lg text-black mb-4">Возможности 3D-VR тура:</p>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              "Инфо-метки с контактами",
-              "План этажа",
-              "Быстрые переходы по локациям",
-              "Интеграция с ЯндексМетрикой",
-              "Замер площади",
-              "Запуск чата в мессенджере",
-              "Переход в модуль бронирования",
-              "Быстрая работа со всех устройств",
+              { text: "Просмотр в VR-шлеме или очках", icon: "Glasses" },
+              {
+                text: "Визитка с возможностью позвонить из тура",
+                icon: "Phone",
+              },
+              { text: "Инфо-метки с контактами", icon: null },
+              { text: "План этажа", icon: null },
+              { text: "Быстрые переходы по локациям", icon: null },
+              { text: "Интеграция с ЯндексМетрикой", icon: null },
+              { text: "Замер площади", icon: null },
+              { text: "Запуск чата в мессенджере", icon: null },
+              { text: "Переход в модуль бронирования", icon: null },
+              { text: "Быстрая работа со всех устройств", icon: null },
             ].map((feature, index) => (
               <span
                 key={index}
-                className="bg-white text-black border border-gold/50 px-4 py-2 rounded-full text-sm shadow-sm"
+                className="bg-white text-black border border-gold/50 px-4 py-2 rounded-full text-sm shadow-sm hover:scale-105 transition-transform duration-200 flex items-center gap-2"
               >
-                {feature}
+                {feature.icon && (
+                  <Icon
+                    name={feature.icon}
+                    size={16}
+                    className="animate-pulse text-gold"
+                  />
+                )}
+                {feature.text}
               </span>
             ))}
           </div>
