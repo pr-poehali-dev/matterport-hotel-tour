@@ -12,7 +12,6 @@ export const useCountUp = ({
   startOnView = true,
 }: UseCountUpOptions) => {
   const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,8 +22,8 @@ export const useCountUp = ({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !isVisible) {
-          setIsVisible(true);
+        if (entry.isIntersecting) {
+          setCount(0); // Сбрасываем счетчик
           animateCount();
         }
       },
@@ -36,7 +35,7 @@ export const useCountUp = ({
     }
 
     return () => observer.disconnect();
-  }, [isVisible, startOnView]);
+  }, [startOnView]);
 
   const animateCount = () => {
     const startTime = Date.now();
