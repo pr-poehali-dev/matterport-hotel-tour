@@ -33,7 +33,19 @@ const DemoTour = () => {
 
         {/* Features */}
         <div className="mt-16 text-center animate-fade-in">
-          <p className="text-lg text-black mb-4">Возможности 3D-VR тура:</p>
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <div className="relative">
+              <Icon
+                name="Headphones"
+                size={40}
+                className="text-purple-500 animate-pulse"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-500 rounded-full opacity-20 animate-ping"></div>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              Возможности 3D-VR тура
+            </h2>
+          </div>
           <div className="flex flex-wrap justify-center gap-4">
             {[
               { text: "Написать в мессенджер", icon: "MessageCircle" },
