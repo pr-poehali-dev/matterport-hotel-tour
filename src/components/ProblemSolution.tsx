@@ -124,7 +124,7 @@ const ProblemSolution = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
             {problems.map((problem, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gold/10 transition-all duration-300 hover:scale-110 hover:rotate-12 animate-[bounce_2s_infinite]">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gold/10 transition-all duration-500 hover:scale-[2] hover:rotate-[360deg] animate-[bounce_3s_infinite]">
                   {index === 0 ? (
                     <img
                       src="https://cdn.poehali.dev/files/c966b33e-85bb-4f51-bbd8-8aff11bd8d09.png"
