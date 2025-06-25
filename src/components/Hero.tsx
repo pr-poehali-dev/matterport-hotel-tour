@@ -14,10 +14,7 @@ const Hero = () => {
       <nav className="relative z-20">
         <div className="px-4 py-4">
           <div className="flex justify-between items-center w-full">
-            <div className="text-xl font-semibold text-[#d4af37]">
-              СОЗДАНИЕ ВИРТУАЛЬНЫХ ТУРОВ.РФ
-            </div>
-            <div className="hidden md:flex justify-center flex-1 mx-8">
+            <div className="hidden md:flex justify-center flex-1">
               <div className="flex justify-evenly w-full max-w-2xl">
                 <button
                   onClick={() => scrollToSection("demo-tour")}
