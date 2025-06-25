@@ -13,7 +13,7 @@ const Hero = () => {
           }}
         />
         {/* White translucent overlay */}
-        <div className="absolute inset-0 bg-white/60" />
+        <div className="absolute inset-0 bg-white/70" />
       </div>
 
       <div className="container mx-auto px-4 text-center relative z-10 animate-fade-in">
