@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Icon from "@/components/ui/icon";
-import emailjs from "@emailjs/browser";
+import { useForm } from "@formspree/react";
 
 const FinalCTA = () => {
   const [formData, setFormData] = useState({
@@ -12,40 +12,21 @@ const FinalCTA = () => {
     phone: "",
     area: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error"
-  >("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // Используем демо-форму Formspree (в продакшене нужно будет заменить на реальный ID)
+  const [state, handleSubmit] = useForm("demo");
+
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus("idle");
 
-    try {
-      await emailjs.send(
-        "service_your_service_id", // Замените на ваш Service ID
-        "template_your_template_id", // Замените на ваш Template ID
-        {
-          to_email: "romanpetrov369@yandex.ru",
-          from_name: formData.name,
-          phone: formData.phone,
-          area: formData.area,
-          message: `Новая заявка на виртуальный тур:
-          Имя: ${formData.name}
-          Телефон: ${formData.phone}
-          Площадь: ${formData.area} м²`,
-        },
-        "your_public_key", // Замените на ваш Public Key
-      );
+    // Создаем FormData для отправки
+    const formElement = e.target as HTMLFormElement;
+    const formDataToSend = new FormData(formElement);
 
-      setSubmitStatus("success");
+    await handleSubmit(formDataToSend);
+
+    if (state.succeeded) {
       setFormData({ name: "", phone: "", area: "" });
-    } catch (error) {
-      console.error("Ошибка отправки:", error);
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -77,7 +58,7 @@ const FinalCTA = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={onSubmit} className="space-y-6">
                 <div
                   className="animate-fade-in"
                   style={{ animationDelay: "0.1s" }}
@@ -87,6 +68,7 @@ const FinalCTA = () => {
                   </Label>
                   <Input
                     id="name"
+                    name="name"
                     type="text"
                     placeholder="Введите Ваше имя"
                     value={formData.name}
@@ -105,6 +87,7 @@ const FinalCTA = () => {
                   </Label>
                   <Input
                     id="phone"
+                    name="phone"
                     type="tel"
                     placeholder="+7 (999) 123-45-67"
                     value={formData.phone}
@@ -123,6 +106,7 @@ const FinalCTA = () => {
                   </Label>
                   <Input
                     id="area"
+                    name="area"
                     type="number"
                     placeholder="Например, 150"
                     value={formData.area}
@@ -133,16 +117,16 @@ const FinalCTA = () => {
 
                 <Button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={state.submitting}
                   className="w-full h-14 text-lg bg-gold hover:bg-amber-600 shadow-lg animate-fade-in transform hover:scale-105 transition-all duration-300 disabled:opacity-50"
                   style={{ animationDelay: "0.4s" }}
                 >
-                  {isSubmitting
+                  {state.submitting
                     ? "Отправляем..."
                     : "Получить индивидуальное предложение"}
                 </Button>
 
-                {submitStatus === "success" && (
+                {state.succeeded && (
                   <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
                     <div className="flex items-center">
                       <Icon
@@ -157,7 +141,7 @@ const FinalCTA = () => {
                   </div>
                 )}
 
-                {submitStatus === "error" && (
+                {state.errors && state.errors.length > 0 && (
                   <div className="mt-4 p-4 bg-red-50 rounded-lg border border-red-200">
                     <div className="flex items-center">
                       <Icon
