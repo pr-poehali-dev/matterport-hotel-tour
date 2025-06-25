@@ -124,8 +124,8 @@ const ProblemSolution = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
             {problems.map((problem, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gold/10 transition-colors">
-                  <Icon name={problem.icon} size={24} className="text-gold" />
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gold/10 transition-colors animate-pulse">
+                  📸
                 </div>
                 <h3 className="font-medium mb-2 text-2xl">{problem.title}</h3>
                 <p className="text-black font-normal text-sm">
