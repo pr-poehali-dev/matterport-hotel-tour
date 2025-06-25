@@ -13,12 +13,12 @@ const Hero = () => {
       {/* Navigation Menu */}
       <nav className="relative z-20">
         <div className="px-4 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-8">
-              <div className="text-xl font-semibold text-[#d4af37]">
-                VR Tours
-              </div>
-              <div className="hidden md:flex space-x-6">
+          <div className="flex justify-between items-center w-full">
+            <div className="text-xl font-semibold text-[#d4af37]">
+              СОЗДАНИЕ ВИРТУАЛЬНЫХ ТУРОВ.РФ
+            </div>
+            <div className="hidden md:flex justify-center flex-1 mx-8">
+              <div className="flex justify-evenly w-full max-w-2xl">
                 <button
                   onClick={() => scrollToSection("demo-tour")}
                   className="text-gray-700 hover:text-[#d4af37] transition-colors"
