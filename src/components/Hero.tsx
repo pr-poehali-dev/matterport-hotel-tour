@@ -9,9 +9,54 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with reception photo and parallax effect */}
-      <div className="absolute inset-0">
+    <section className="relative min-h-screen flex flex-col overflow-hidden">
+      {/* Navigation Menu */}
+      <nav className="relative z-20 bg-white/90 backdrop-blur-sm border-b border-gray-200/50">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center space-x-8">
+              <div className="text-xl font-semibold text-[#d4af37]">VR Tours</div>
+              <div className="hidden md:flex space-x-6">
+                <button onClick={() => scrollToSection("problems")} className="text-gray-700 hover:text-[#d4af37] transition-colors">
+                  Проблемы
+                </button>
+                <button onClick={() => scrollToSection("portfolio")} className="text-gray-700 hover:text-[#d4af37] transition-colors">
+                  Портфолио
+                </button>
+                <button onClick={() => scrollToSection("results")} className="text-gray-700 hover:text-[#d4af37] transition-colors">
+                  Результаты
+                </button>
+                <button onClick={() => scrollToSection("testimonials")} className="text-gray-700 hover:text-[#d4af37] transition-colors">
+                  Отзывы
+                </button>
+                <button onClick={() => scrollToSection("process")} className="text-gray-700 hover:text-[#d4af37] transition-colors">
+                  Процесс работы
+                </button>
+                <button onClick={() => scrollToSection("pricing")} className="text-gray-700 hover:text-[#d4af37] transition-colors">
+                  Цены
+                </button>
+                <button onClick={() => scrollToSection("calculator")} className="text-gray-700 hover:text-[#d4af37] transition-colors">
+                  Калькулятор
+                </button>
+                <button onClick={() => scrollToSection("contacts")} className="text-gray-700 hover:text-[#d4af37] transition-colors">
+                  Контакты
+                </button>
+              </div>
+            </div>
+            <a 
+              href="tel:+79190223316" 
+              className="text-[#d4af37] font-semibold hover:text-[#b8941f] transition-colors text-lg"
+            >
+              +7 919 022 33 16
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Content */}
+      <div className="flex-1 flex items-center justify-center">
+        {/* Background with reception photo and parallax effect */}
+        <div className="absolute inset-0">
         <div
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
