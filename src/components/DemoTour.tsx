@@ -36,9 +36,9 @@ const DemoTour = () => {
           <div className="flex items-center justify-center gap-3 mb-8">
             <div className="relative">
               <Icon
-                name="HeartFilled"
+                name="Heart"
                 size={40}
-                className="text-yellow-500 animate-pulse"
+                className="text-yellow-500 animate-pulse fill-current"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full opacity-20 animate-ping"></div>
             </div>
