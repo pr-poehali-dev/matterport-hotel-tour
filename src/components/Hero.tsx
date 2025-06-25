@@ -32,7 +32,7 @@ const Hero = () => {
         </h1>
 
         <p className="text-xl md:text-2xl text-black mb-12 max-w-4xl mx-auto leading-relaxed">
-          Живые 3D-туры Matterport для бутик-отелей, где важно показать
+          Живые 3D-VR туры для отелей, гостиниц и вилл, где важно показать
           атмосферу на 360°
         </p>
 
