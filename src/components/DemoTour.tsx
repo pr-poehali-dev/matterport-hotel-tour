@@ -34,13 +34,21 @@ const DemoTour = () => {
         {/* Features */}
         <div className="mt-16 text-center animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-8">
-            <div className="relative">
+            <div className="relative flex items-center justify-center">
               <Icon
-                name="Heart"
-                size={40}
-                className="text-yellow-500 animate-pulse fill-current"
+                name="Settings"
+                size={32}
+                className="text-yellow-500 animate-spin"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full opacity-20 animate-ping"></div>
+              <Icon
+                name="Cog"
+                size={24}
+                className="text-yellow-400 animate-spin absolute"
+                style={{
+                  animationDirection: "reverse",
+                  animationDuration: "3s",
+                }}
+              />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold">
               <span className="text-black">Возможности</span>{" "}
