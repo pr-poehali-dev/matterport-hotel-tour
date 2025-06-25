@@ -177,15 +177,16 @@ const ProblemSolution = () => {
                   className="text-yellow-500"
                 >
                   <circle cx="12" cy="4" r="2" fill="currentColor" />
+                  <path d="M10 6h4v6l-1 1h-2l-1-1V6z" fill="currentColor" />
                   <path
-                    d="M10 6h4v6l-1 1v4h-2v-4l-1-1V6z"
+                    className="left-leg"
+                    d="M10 14l1-1v4l-1 2h1l1-2v-4"
                     fill="currentColor"
                   />
                   <path
-                    d="M8 14l2-2v4l-1 2h2l1-2v-4l2 2"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
+                    className="right-leg"
+                    d="M14 14l-1-1v4l1 2h1l-1-2v-4"
+                    fill="currentColor"
                   />
                 </svg>
               </div>
