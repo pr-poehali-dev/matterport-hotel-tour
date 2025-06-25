@@ -36,19 +36,19 @@ const DemoTour = () => {
           <p className="text-lg text-black mb-4">Возможности 3D-VR тура:</p>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              { text: "Просмотр в VR-шлеме или очках", icon: "Glasses" },
+              { text: "Написать в мессенджер", icon: "MessageCircle" },
               {
                 text: "Визитка с возможностью позвонить из тура",
                 icon: "Phone",
               },
-              { text: "Инфо-метки с контактами", icon: null },
-              { text: "План этажа", icon: null },
-              { text: "Быстрые переходы по локациям", icon: null },
-              { text: "Интеграция с ЯндексМетрикой", icon: null },
-              { text: "Замер площади", icon: null },
-              { text: "Запуск чата в мессенджере", icon: null },
-              { text: "Переход в модуль бронирования", icon: null },
-              { text: "Быстрая работа со всех устройств", icon: null },
+              { text: "Инфо-метки с контактами", icon: "Tag" },
+              { text: "План этажа", icon: "Map" },
+              { text: "Быстрые переходы по локациям", icon: "Navigation" },
+              { text: "Интеграция с Яндекс.Метрикой", icon: "BarChart" },
+              { text: "Замер площади", icon: "Ruler" },
+              { text: "Просмотр в VR-шлеме или очках", icon: "Glasses" },
+              { text: "Переход в модуль бронирования", icon: "Calendar" },
+              { text: "Быстрая работа со всех устройств", icon: "Monitor" },
             ].map((feature, index) => (
               <span
                 key={index}
