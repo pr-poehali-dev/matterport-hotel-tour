@@ -60,10 +60,10 @@ const WorkProcess = () => {
             >
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">
+                  <div className="w-12 h-12 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">
                     {step.number}
                   </div>
-                  <Icon name={step.icon} size={24} className="text-blue-600" />
+                  <Icon name={step.icon} size={24} className="text-amber-600" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>
@@ -78,7 +78,7 @@ const WorkProcess = () => {
               <Icon
                 name="FileCheck"
                 size={32}
-                className="text-green-600 mx-auto mb-3"
+                className="text-amber-600 mx-auto mb-3"
               />
               <h4 className="font-semibold mb-2">Договор</h4>
               <p className="text-sm text-gray-600">
@@ -92,7 +92,7 @@ const WorkProcess = () => {
               <Icon
                 name="CreditCard"
                 size={32}
-                className="text-blue-600 mx-auto mb-3"
+                className="text-amber-600 mx-auto mb-3"
               />
               <h4 className="font-semibold mb-2">Оплата после публикации</h4>
               <p className="text-sm text-gray-600">
@@ -106,7 +106,7 @@ const WorkProcess = () => {
               <Icon
                 name="Package"
                 size={32}
-                className="text-purple-600 mx-auto mb-3"
+                className="text-amber-600 mx-auto mb-3"
               />
               <h4 className="font-semibold mb-2">Что включено</h4>
               <p className="text-sm text-gray-600">
