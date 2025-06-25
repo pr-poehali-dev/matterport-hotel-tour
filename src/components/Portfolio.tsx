@@ -28,10 +28,12 @@ const Portfolio = () => {
       buttonText: "Посмотреть тур на сайте отеля",
     },
     {
-      title: "Премиальная вилла в Подмосковье",
-      image:
-        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop",
-      description: "Загородная резиденция с панорамными видами",
+      title: "21 стол, 2 банкетных зала",
+      iframe: `<iframe width="853" height="480" src="https://3d.bogdarnya.ru/6pxyC6jtytC/?m=6pxyC6jtytC&hl=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>`,
+      description:
+        'Ресторан "Колхозный клуб", настоящий центр русской и европейской гастрономии, музей подлинной сельской культуры',
+      link: "https://bogdarnya.ru/food/restoran-kolkhoznyy-klub",
+      buttonText: "Посмотреть тур на сайте ресторана",
     },
     {
       title: "Luxury SPA-комплекс",
