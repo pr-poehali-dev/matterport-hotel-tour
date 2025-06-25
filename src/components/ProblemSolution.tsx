@@ -124,8 +124,16 @@ const ProblemSolution = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
             {problems.map((problem, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gold/10 transition-colors animate-pulse">
-                  📸
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gold/10 transition-all duration-300 hover:scale-110 animate-pulse">
+                  {index === 0 ? (
+                    <img
+                      src="https://cdn.poehali.dev/files/c966b33e-85bb-4f51-bbd8-8aff11bd8d09.png"
+                      alt="Статичный контент"
+                      className="w-12 h-12 object-contain animate-[bounce_2s_infinite]"
+                    />
+                  ) : (
+                    <span className="text-2xl">📸</span>
+                  )}
                 </div>
                 <h3 className="font-medium mb-2 text-2xl">{problem.title}</h3>
                 <p className="text-black font-normal text-sm">
