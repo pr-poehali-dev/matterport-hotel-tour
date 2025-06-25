@@ -1,0 +1,74 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
+const Portfolio = () => {
+  const projects = [
+    {
+      title: "Бутик-отель в центре Москвы",
+      image:
+        "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop",
+      description: "Элегантные номера и общественные зоны премиум-класса",
+    },
+    {
+      title: "Дизайнерские апартаменты",
+      image:
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop",
+      description: "Современный интерьер с авторским дизайном",
+    },
+    {
+      title: "Премиальная вилла в Подмосковье",
+      image:
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop",
+      description: "Загородная резиденция с панорамными видами",
+    },
+    {
+      title: "Luxury SPA-комплекс",
+      image:
+        "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&h=400&fit=crop",
+      description: "Релаксационные зоны и процедурные кабинеты",
+    },
+  ];
+
+  return (
+    <section className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">Наши проекты</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Каждый виртуальный тур — это история успеха наших клиентов
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {projects.map((project, index) => (
+            <Card
+              key={index}
+              className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300" />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <p className="text-gray-600 mb-4">{project.description}</p>
+                <Button
+                  variant="outline"
+                  className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all duration-300"
+                >
+                  Посмотреть тур
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Portfolio;
