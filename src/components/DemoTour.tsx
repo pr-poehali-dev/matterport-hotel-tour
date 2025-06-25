@@ -29,18 +29,6 @@ const DemoTour = () => {
           </div>
         </div>
 
-        {/* Tips */}
-        <div className="flex flex-wrap justify-center gap-6 animate-fade-in">
-          {tips.map((tip, index) => (
-            <div
-              key={index}
-              className="bg-white px-6 py-3 rounded-full shadow-sm border border-gold/20"
-            >
-              <span className="text-sm text-black">💡 {tip}</span>
-            </div>
-          ))}
-        </div>
-
         {/* Features */}
         <div className="mt-16 text-center animate-fade-in">
           <p className="text-lg text-black mb-4">Возможности Matterport:</p>
