@@ -83,52 +83,24 @@ const AnimatedStat = ({
 const ProblemSolution = () => {
   const problems = [
     {
-      icon: "Heart",
+      icon: "ImageOff",
       title: "Статичный контент ≠ эмоции",
       description: "Фото не передают атмосферу",
-      animationClass: "animate-pulse",
     },
     {
-      icon: "Cloud",
-      title: "Фото не передают атмосферу",
-      description: "Ограниченное взаимодействие с фото/видео",
-      animationClass: "animate-bounce",
+      icon: "MousePointer",
+      title: "Ограниченное взаимодействие с фото/видео",
+      description: "Отсутствие интерактива снижает интерес к бронированию",
     },
     {
       icon: "MousePointerClick",
-      title: "Ограниченное взаимодействие с фото/видео",
-      description: "Отсутствие интерактива снижает интерес к бронированию",
-      animationClass: "hover:animate-spin",
-    },
-    {
-      icon: "Calendar",
-      title: "Отсутствие интерактива снижает интерес к бронированию",
-      description: "Низкое вовлечение",
-      animationClass: "animate-pulse",
-    },
-    {
-      icon: "ThumbsUp",
       title: "Низкое вовлечение",
       description: "Посетители быстрее покидают сайт",
-      animationClass: "hover:animate-bounce",
-    },
-    {
-      icon: "LogOut",
-      title: "Посетители быстрее покидают сайт",
-      description: "Высокий показатель отказов",
-      animationClass: "hover:translate-x-2 transition-transform",
-    },
-    {
-      icon: "RotateCcw",
-      title: "Фото не показывают 100% пространства",
-      description: "Ограниченный обзор помещения",
-      animationClass: "animate-spin",
     },
     {
       icon: "Camera",
-      title: "Важные фрагменты остаются за кадром",
-      description: "Неполное представление о пространстве",
-      animationClass: "hover:animate-pulse",
+      title: "Фото не показывают 100% пространства",
+      description: "Важные фрагменты остаются за кадром",
     },
   ];
 
@@ -153,11 +125,7 @@ const ProblemSolution = () => {
             {problems.map((problem, index) => (
               <div key={index} className="text-center group">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gold/10 transition-colors">
-                  <Icon
-                    name={problem.icon}
-                    size={24}
-                    className={`text-gold ${problem.animationClass}`}
-                  />
+                  <Icon name={problem.icon} size={24} className="text-gold" />
                 </div>
                 <h3 className="font-medium mb-2 text-2xl">{problem.title}</h3>
                 <p className="text-black font-normal text-sm">
