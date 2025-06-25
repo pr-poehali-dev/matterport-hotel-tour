@@ -8,16 +8,16 @@ const DemoTour = () => {
   ];
 
   return (
-    <section id="demo-tour" className="py-24 bg-gray-50">
+    <section id="demo-tour" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-10 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-light mb-6">
             Попробуйте <span className="text-gold">глазами Вашего гостя</span>
           </h2>
         </div>
 
         {/* Demo iframe placeholder */}
-        <div className="max-w-6xl mx-auto mb-12 animate-fade-in">
+        <div className="max-w-6xl mx-auto mb-8 animate-fade-in">
           <div className="relative aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-2xl">
             <iframe
               width="100%"
@@ -32,8 +32,8 @@ const DemoTour = () => {
         </div>
 
         {/* Features */}
-        <div className="mt-16 text-center animate-fade-in">
-          <div className="flex items-center justify-center gap-3 mb-8">
+        <div className="mt-10 text-center animate-fade-in">
+          <div className="flex items-center justify-center gap-3 mb-6">
             <div className="relative flex items-center justify-center">
               <Icon
                 name="Settings"
