@@ -48,12 +48,15 @@ const DemoTour = () => {
             {[
               "Инфо-метки с контактами",
               "План этажа",
-              "Замер площади",
-              "Интеграция с Google",
+              "быстрые переходы по локациям",
+              "интеграция с ЯндексМетрикой",
+              "замер площади",
+              "запуск чата в мессенджере",
+              "переход в модуль бронирования",
             ].map((feature, index) => (
               <span
                 key={index}
-                className="bg-gold/10 text-gold px-4 py-2 rounded-md text-sm"
+                className="bg-gold/10 text-gold px-4 py-2 rounded-full text-sm"
               >
                 {feature}
               </span>
