@@ -172,49 +172,109 @@ const ProblemSolution = () => {
               height="32"
               viewBox="0 0 32 32"
               className="text-yellow-500"
+              fill="currentColor"
             >
-              {/* Глазное яблоко */}
+              {/* VR Headset */}
               <ellipse
                 cx="16"
-                cy="16"
-                rx="15"
-                ry="10"
-                fill="white"
-                stroke="#d4af37"
-                strokeWidth="1"
+                cy="10"
+                rx="8"
+                ry="4"
+                fill="currentColor"
+                opacity="0.9"
+              />
+              <rect x="10" y="8" width="12" height="4" rx="2" fill="white" />
+              <rect
+                x="11"
+                y="9"
+                width="10"
+                height="2"
+                rx="1"
+                fill="currentColor"
               />
 
-              {/* Радужка */}
-              <circle cx="16" cy="16" r="7" fill="url(#irisGradient)" />
-
-              {/* Зрачок */}
-              <circle cx="16" cy="16" r="3" fill="#1a1a1a" />
-
-              {/* Блик */}
-              <circle cx="14" cy="13" r="1.5" fill="white" opacity="0.8" />
-
-              {/* Верхнее веко (анимированное) */}
+              {/* VR Side indicators */}
               <path
-                d="M 1 16 Q 16 6 31 16 Q 16 16 1 16"
-                fill="#d4af37"
-                className="animate-blink-top"
+                d="M6 11 C6 11 7 10 8 11 C8 12 7 13 6 12 Z"
+                fill="currentColor"
+                opacity="0.7"
               />
-
-              {/* Нижнее веко (анимированное) */}
               <path
-                d="M 1 16 Q 16 26 31 16 Q 16 16 1 16"
-                fill="#d4af37"
-                className="animate-blink-bottom"
+                d="M26 11 C26 11 25 10 24 11 C24 12 25 13 26 12 Z"
+                fill="currentColor"
+                opacity="0.7"
+              />
+              <path
+                d="M4 12 C4 12 5 11 6 12 C6 13 5 14 4 13 Z"
+                fill="currentColor"
+                opacity="0.5"
+              />
+              <path
+                d="M28 12 C28 12 27 11 26 12 C26 13 27 14 28 13 Z"
+                fill="currentColor"
+                opacity="0.5"
               />
 
-              {/* Градиенты */}
-              <defs>
-                <radialGradient id="irisGradient" cx="0.3" cy="0.3">
-                  <stop offset="0%" stopColor="#ffd700" />
-                  <stop offset="70%" stopColor="#daa520" />
-                  <stop offset="100%" stopColor="#b8860b" />
-                </radialGradient>
-              </defs>
+              {/* Person Body */}
+              <ellipse cx="16" cy="16" rx="6" ry="4" fill="currentColor" />
+              <path
+                d="M10 18 Q10 20 8 22 Q8 24 10 26 Q12 28 14 26 Q16 24 18 26 Q20 28 22 26 Q24 24 24 22 Q24 20 22 18"
+                fill="currentColor"
+                opacity="0.8"
+              />
+
+              {/* Arms in motion */}
+              <ellipse
+                cx="8"
+                cy="18"
+                rx="2"
+                ry="4"
+                fill="currentColor"
+                opacity="0.7"
+                transform="rotate(-20 8 18)"
+              />
+              <ellipse
+                cx="24"
+                cy="18"
+                rx="2"
+                ry="4"
+                fill="currentColor"
+                opacity="0.7"
+                transform="rotate(20 24 18)"
+              />
+
+              {/* Movement indicator arrow */}
+              <path
+                d="M26 24 L29 22 L26 20 L27 22 Z"
+                fill="currentColor"
+                opacity="0.6"
+              />
+
+              {/* Footsteps */}
+              <ellipse
+                cx="20"
+                cy="29"
+                rx="2"
+                ry="1.5"
+                fill="currentColor"
+                opacity="0.4"
+              />
+              <ellipse
+                cx="24"
+                cy="30"
+                rx="1.5"
+                ry="1"
+                fill="currentColor"
+                opacity="0.3"
+              />
+              <ellipse
+                cx="22"
+                cy="31"
+                rx="1"
+                ry="0.5"
+                fill="currentColor"
+                opacity="0.2"
+              />
             </svg>
             Эффект присутствия и свободы передвижения
           </h3>
