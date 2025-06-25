@@ -6,10 +6,9 @@ const Hero = () => {
       {/* Background with reception photo and parallax effect */}
       <div className="absolute inset-0">
         <div
-          className="w-full h-full bg-cover bg-center animate-pulse"
+          className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
-            animation: "parallax-float 8s ease-in-out infinite",
+            backgroundImage: `url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
           }}
         />
         {/* White translucent overlay */}
