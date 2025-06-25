@@ -166,12 +166,30 @@ const ProblemSolution = () => {
 
         {/* Solution */}
         <div className="bg-gray-50 rounded-2xl p-12 mb-16 animate-fade-in">
-          <h3 className="text-3xl font-light text-center mb-8 flex items-center justify-center gap-3">
-            <Icon
-              name="User"
-              className="text-yellow-500 animate-bounce"
-              size={32}
-            />
+          <h3 className="text-3xl font-light text-center mb-8 relative flex items-center justify-center gap-3">
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
+              <div className="walking-person">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="text-yellow-500"
+                >
+                  <circle cx="12" cy="4" r="2" fill="currentColor" />
+                  <path
+                    d="M10 6h4v6l-1 1v4h-2v-4l-1-1V6z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M8 14l2-2v4l-1 2h2l1-2v-4l2 2"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+            </div>
             Эффект присутствия и свобода перемещения
           </h3>
           <blockquote className="text-xl md:text-2xl text-center leading-relaxed text-text italic">
@@ -199,3 +217,29 @@ const ProblemSolution = () => {
 };
 
 export default ProblemSolution;
+
+// CSS styles for walking person animation
+const styles = `
+  .walking-person {
+    animation: walkLeftRight 4s ease-in-out infinite;
+  }
+  
+  @keyframes walkLeftRight {
+    0% {
+      transform: translateX(-50px);
+    }
+    50% {
+      transform: translateX(calc(100vw - 100px));
+    }
+    100% {
+      transform: translateX(-50px);
+    }
+  }
+`;
+
+// Inject styles
+if (typeof document !== "undefined") {
+  const styleSheet = document.createElement("style");
+  styleSheet.textContent = styles;
+  document.head.appendChild(styleSheet);
+}
