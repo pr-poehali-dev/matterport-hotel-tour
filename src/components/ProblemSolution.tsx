@@ -129,13 +129,13 @@ const ProblemSolution = () => {
                     <img
                       src="https://cdn.poehali.dev/files/c966b33e-85bb-4f51-bbd8-8aff11bd8d09.png"
                       alt="Статичный контент"
-                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:[transform:rotateY(720deg)] relative z-10"
+                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:rotate-[360deg] relative z-10"
                     />
                   ) : index === 1 ? (
                     <img
                       src="https://cdn.poehali.dev/files/ec7b85f6-38f5-43e9-ae66-54e3f7488690.png"
                       alt="Ограниченное взаимодействие с фото/видео"
-                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:[transform:rotateY(720deg)] relative z-10"
+                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:rotate-[360deg] relative z-10"
                     />
                   ) : index === 3 ? (
                     <img
@@ -147,7 +147,7 @@ const ProblemSolution = () => {
                     <img
                       src="https://cdn.poehali.dev/files/9fd94515-2a5b-4f1a-b2c5-bba6411231cf.png"
                       alt="Низкое вовлечение"
-                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:[transform:rotateY(720deg)] relative z-10"
+                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:rotate-[360deg] relative z-10"
                     />
                   ) : (
                     <span className="text-2xl transition-all duration-500 group-hover:scale-[2] group-hover:[transform:scale(2)_rotateY(180deg)]">
