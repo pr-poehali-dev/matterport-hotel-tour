@@ -141,10 +141,12 @@ const ProblemSolution = () => {
                     <img
                       src="https://cdn.poehali.dev/files/1ec14ca3-52e5-411a-94a9-6d25161b6f8b.png"
                       alt="Фото не показывают 100% пространства"
-                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:rotate-[360deg] relative z-10"
+                      className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:[transform:rotateY(180deg)] relative z-10"
                     />
                   ) : (
-                    <span className="text-2xl">📸</span>
+                    <span className="text-2xl transition-all duration-500 group-hover:scale-[2] group-hover:rotateY-180">
+                      📸
+                    </span>
                   )}
                 </div>
                 <h3 className="font-medium mb-2 text-2xl">{problem.title}</h3>
