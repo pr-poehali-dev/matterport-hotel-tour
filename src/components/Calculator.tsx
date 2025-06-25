@@ -68,7 +68,7 @@ const Calculator = () => {
               </div>
 
               {area > 0 && (
-                <div className="bg-blue-50 p-6 rounded-lg space-y-4">
+                <div className="bg-amber-50 p-6 rounded-lg space-y-4 animate-scale-in border border-gold/20">
                   <h3 className="text-xl font-semibold text-center mb-4">
                     Рекомендуемый пакет: {pricing.package}
                   </h3>
@@ -101,7 +101,7 @@ const Calculator = () => {
                     <hr className="border-gray-300" />
                     <div className="flex justify-between text-xl font-bold">
                       <span>Итого:</span>
-                      <span className="text-blue-600">
+                      <span className="text-gold">
                         {totalPrice.toLocaleString()} ₽
                       </span>
                     </div>

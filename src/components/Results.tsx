@@ -31,23 +31,26 @@ const Results = () => {
           {cases.map((case_, index) => (
             <div
               key={index}
-              className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow"
+              className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-scale-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <h3 className="text-xl font-medium mb-4">{case_.title}</h3>
+              <h3 className="text-xl font-medium mb-4 text-gray-900">
+                {case_.title}
+              </h3>
               <div className="text-2xl text-gold font-light mb-4">
                 {case_.result}
               </div>
-              <p className="text-secondary italic">"{case_.description}"</p>
+              <p className="text-gray-700 italic">"{case_.description}"</p>
             </div>
           ))}
         </div>
 
         {/* Quote */}
         <div className="mt-16 text-center animate-fade-in">
-          <blockquote className="text-2xl md:text-3xl font-light italic text-text max-w-4xl mx-auto">
+          <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800 max-w-4xl mx-auto">
             "Бронирования уверенные, а отмен стало в 3× меньше."
           </blockquote>
-          <cite className="text-secondary mt-4 block">
+          <cite className="text-gray-700 font-medium mt-4 block">
             — Управляющий бутик-отеля
           </cite>
         </div>

@@ -22,9 +22,9 @@ const FinalCTA = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white">
+    <section className="py-20 bg-gradient-to-br from-gold/90 via-amber-600 to-amber-700 text-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center mb-12">
+        <div className="max-w-4xl mx-auto text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Готовы увеличить продажи с помощью виртуальных туров?
           </h2>
@@ -34,7 +34,7 @@ const FinalCTA = () => {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto animate-scale-in">
           <Card className="shadow-2xl">
             <CardHeader className="text-center">
               <CardTitle className="text-2xl text-gray-900">
@@ -43,7 +43,10 @@ const FinalCTA = () => {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
+                <div
+                  className="animate-fade-in"
+                  style={{ animationDelay: "0.1s" }}
+                >
                   <Label htmlFor="name" className="text-gray-700 font-medium">
                     Имя
                   </Label>
@@ -53,12 +56,15 @@ const FinalCTA = () => {
                     placeholder="Введите ваше имя"
                     value={formData.name}
                     onChange={(e) => handleChange("name", e.target.value)}
-                    className="mt-2 h-12"
+                    className="mt-2 h-12 focus:ring-gold focus:border-gold"
                     required
                   />
                 </div>
 
-                <div>
+                <div
+                  className="animate-fade-in"
+                  style={{ animationDelay: "0.2s" }}
+                >
                   <Label htmlFor="phone" className="text-gray-700 font-medium">
                     Телефон/WhatsApp
                   </Label>
@@ -68,12 +74,15 @@ const FinalCTA = () => {
                     placeholder="+7 (999) 123-45-67"
                     value={formData.phone}
                     onChange={(e) => handleChange("phone", e.target.value)}
-                    className="mt-2 h-12"
+                    className="mt-2 h-12 focus:ring-gold focus:border-gold"
                     required
                   />
                 </div>
 
-                <div>
+                <div
+                  className="animate-fade-in"
+                  style={{ animationDelay: "0.3s" }}
+                >
                   <Label htmlFor="area" className="text-gray-700 font-medium">
                     Площадь объекта (м²)
                   </Label>
@@ -83,13 +92,14 @@ const FinalCTA = () => {
                     placeholder="Например, 150"
                     value={formData.area}
                     onChange={(e) => handleChange("area", e.target.value)}
-                    className="mt-2 h-12"
+                    className="mt-2 h-12 focus:ring-gold focus:border-gold"
                   />
                 </div>
 
                 <Button
                   type="submit"
-                  className="w-full h-14 text-lg bg-blue-600 hover:bg-blue-700 shadow-lg"
+                  className="w-full h-14 text-lg bg-gold hover:bg-amber-600 shadow-lg animate-fade-in transform hover:scale-105 transition-all duration-300"
+                  style={{ animationDelay: "0.4s" }}
                 >
                   Получить индивидуальное предложение
                 </Button>

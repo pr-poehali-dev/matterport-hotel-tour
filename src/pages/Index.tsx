@@ -8,6 +8,7 @@ import WorkProcess from "@/components/WorkProcess";
 import Pricing from "@/components/Pricing";
 import Calculator from "@/components/Calculator";
 import FinalCTA from "@/components/FinalCTA";
+import MessengerButtons from "@/components/MessengerButtons";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <Pricing />
       <Calculator />
       <FinalCTA />
+      <MessengerButtons />
     </div>
   );
 };

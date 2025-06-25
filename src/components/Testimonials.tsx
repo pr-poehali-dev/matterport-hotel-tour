@@ -56,16 +56,17 @@ const Testimonials = () => {
               .map((testimonial, index) => (
                 <div
                   key={currentSlide * 2 + index}
-                  className="bg-white p-8 rounded-xl shadow-sm"
+                  className="bg-white p-8 rounded-xl shadow-sm transform transition-all duration-500 hover:scale-105 animate-slide-in-right"
+                  style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <blockquote className="text-lg mb-6 italic">
+                  <blockquote className="text-lg mb-6 italic text-gray-800">
                     "{testimonial.text}"
                   </blockquote>
                   <div className="border-t pt-4">
                     <cite className="text-gold font-medium not-italic">
                       {testimonial.author}
                     </cite>
-                    <div className="text-secondary text-sm">
+                    <div className="text-gray-700 text-sm font-medium">
                       {testimonial.company}
                     </div>
                   </div>

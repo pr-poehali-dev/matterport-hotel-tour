@@ -43,7 +43,8 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+              className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden animate-scale-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative overflow-hidden">
                 <img
@@ -58,7 +59,7 @@ const Portfolio = () => {
                 <p className="text-gray-600 mb-4">{project.description}</p>
                 <Button
                   variant="outline"
-                  className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all duration-300"
+                  className="w-full group-hover:bg-gold group-hover:text-white group-hover:border-gold transition-all duration-300"
                 >
                   Посмотреть тур
                 </Button>
