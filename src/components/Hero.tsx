@@ -11,8 +11,8 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Navigation Menu */}
-      <nav className="relative z-20 bg-white/90 backdrop-blur-sm border-b border-gray-200/50">
-        <div className="container mx-auto px-4 py-4">
+      <nav className="relative z-20">
+        <div className="px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-8">
               <div className="text-xl font-semibold text-[#d4af37]">
