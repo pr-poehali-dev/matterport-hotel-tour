@@ -145,7 +145,7 @@ const ProblemSolution = () => {
                     />
                   ) : index === 2 ? (
                     <img
-                      src="https://cdn.poehali.dev/files/9fd94515-2a5b-4f1a-b2c5-bba6411231cf.png"
+                      src="https://cdn.poehali.dev/files/eacbfc8f-bff4-4200-b715-cba0b09022a3.png"
                       alt="Низкое вовлечение"
                       className="w-12 h-12 object-contain transition-all duration-500 group-hover:scale-[2] group-hover:[transform:scale(2)_rotateY(720deg)] relative z-10"
                     />
