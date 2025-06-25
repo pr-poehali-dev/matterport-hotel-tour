@@ -14,14 +14,14 @@ const Hero = () => {
       <nav className="relative z-20">
         <div className="px-4 py-4">
           <div className="flex justify-between items-center w-full">
-            <div className="hidden md:flex justify-center flex-1">
-              <div className="flex justify-evenly w-full max-w-2xl">
-                <button
-                  onClick={() => scrollToSection("demo-tour")}
-                  className="text-gray-700 hover:text-[#d4af37] transition-colors"
-                >
-                  Попробовать 3D-тур
-                </button>
+            <div className="hidden md:flex items-center w-full">
+              <button
+                onClick={() => scrollToSection("demo-tour")}
+                className="text-gray-700 hover:text-[#d4af37] transition-colors mr-8"
+              >
+                Попробовать 3D-тур
+              </button>
+              <div className="flex justify-evenly flex-1">
                 <button
                   onClick={() => scrollToSection("portfolio")}
                   className="text-gray-700 hover:text-[#d4af37] transition-colors"
@@ -44,7 +44,7 @@ const Hero = () => {
             </div>
             <a
               href="tel:+79190223316"
-              className="text-[#d4af37] font-semibold hover:text-[#b8941f] transition-colors text-lg"
+              className="text-[#d4af37] font-semibold hover:text-[#b8941f] transition-colors text-lg ml-8"
             >
               +7 919 022 33 16
             </a>
