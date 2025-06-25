@@ -39,6 +39,7 @@ const DemoTour = () => {
                 name="Settings"
                 size={32}
                 className="text-yellow-500 animate-spin"
+                style={{ animationDuration: "4s" }}
               />
               <Icon
                 name="Cog"
@@ -46,7 +47,7 @@ const DemoTour = () => {
                 className="text-yellow-400 animate-spin absolute"
                 style={{
                   animationDirection: "reverse",
-                  animationDuration: "3s",
+                  animationDuration: "6s",
                 }}
               />
             </div>
