@@ -48,7 +48,7 @@ const ProblemSolution = () => {
                   <Icon name={problem.icon} size={24} className="text-gold" />
                 </div>
                 <h3 className="text-lg font-medium mb-2">{problem.title}</h3>
-                <p className="text-secondary">{problem.description}</p>
+                <p className="text-black">{problem.description}</p>
               </div>
             ))}
           </div>
@@ -71,7 +71,7 @@ const ProblemSolution = () => {
               <div className="text-4xl md:text-5xl font-light text-gold mb-2">
                 {stat.value}
               </div>
-              <p className="text-secondary">{stat.label}</p>
+              <p className="text-black">{stat.label}</p>
             </div>
           ))}
         </div>

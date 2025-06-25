@@ -8,7 +8,8 @@ const Hero = () => {
         <div
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+            animation: "parallax-float 8s ease-in-out infinite",
           }}
         />
         {/* White translucent overlay */}
@@ -23,7 +24,7 @@ const Hero = () => {
           </span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-gray-800 mb-12 max-w-4xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-black mb-12 max-w-4xl mx-auto leading-relaxed">
           Живые 3D-туры Matterport для бутик-отелей, где важно показать
           атмосферу на 360°
         </p>
