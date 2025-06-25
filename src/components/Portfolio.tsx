@@ -36,10 +36,9 @@ const Portfolio = () => {
       buttonText: "Посмотреть тур на сайте ресторана",
     },
     {
-      title: "Luxury SPA-комплекс",
-      image:
-        "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&h=400&fit=crop",
-      description: "Релаксационные зоны и процедурные кабинеты",
+      title:
+        'Уютный дом "капсула" площадью 32 кв.м. подходит для любителей уединенного и комфортного отдыха на природе.',
+      iframe: `<iframe width="853" height="480" src="https://3d.bogdarnya.ru/captyc8ZSao/?m=captyc8ZSao&hl=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>`,
     },
   ];
 
