@@ -166,7 +166,14 @@ const ProblemSolution = () => {
 
         {/* Solution */}
         <div className="bg-gray-50 rounded-2xl p-12 mb-16 animate-fade-in">
-          <h3 className="text-3xl font-light text-center mb-8">Решение</h3>
+          <h3 className="text-3xl font-light text-center mb-8 flex items-center justify-center gap-3">
+            <Icon
+              name="User"
+              className="text-yellow-500 animate-bounce"
+              size={32}
+            />
+            Эффект присутствия и свобода перемещения
+          </h3>
           <blockquote className="text-xl md:text-2xl text-center leading-relaxed text-text italic">
             "3D-тур — это не просто фото: гость свободно гуляет по залам,
             разглядывает детали, чувствует масштаб и сразу влюбляется в Ваше
