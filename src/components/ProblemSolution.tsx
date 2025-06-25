@@ -174,106 +174,15 @@ const ProblemSolution = () => {
               className="text-yellow-500"
               fill="currentColor"
             >
-              {/* VR Headset */}
-              <ellipse
-                cx="16"
-                cy="10"
-                rx="8"
-                ry="4"
-                fill="currentColor"
-                opacity="0.9"
-              />
-              <rect x="10" y="8" width="12" height="4" rx="2" fill="white" />
-              <rect
-                x="11"
-                y="9"
-                width="10"
-                height="2"
-                rx="1"
-                fill="currentColor"
-              />
-
-              {/* VR Side indicators */}
+              {/* Elegant Golden Checkmark */}
               <path
-                d="M6 11 C6 11 7 10 8 11 C8 12 7 13 6 12 Z"
-                fill="currentColor"
-                opacity="0.7"
-              />
-              <path
-                d="M26 11 C26 11 25 10 24 11 C24 12 25 13 26 12 Z"
-                fill="currentColor"
-                opacity="0.7"
-              />
-              <path
-                d="M4 12 C4 12 5 11 6 12 C6 13 5 14 4 13 Z"
-                fill="currentColor"
-                opacity="0.5"
-              />
-              <path
-                d="M28 12 C28 12 27 11 26 12 C26 13 27 14 28 13 Z"
-                fill="currentColor"
-                opacity="0.5"
-              />
-
-              {/* Person Body */}
-              <ellipse cx="16" cy="16" rx="6" ry="4" fill="currentColor" />
-              <path
-                d="M10 18 Q10 20 8 22 Q8 24 10 26 Q12 28 14 26 Q16 24 18 26 Q20 28 22 26 Q24 24 24 22 Q24 20 22 18"
-                fill="currentColor"
-                opacity="0.8"
-              />
-
-              {/* Arms in motion */}
-              <ellipse
-                cx="8"
-                cy="18"
-                rx="2"
-                ry="4"
-                fill="currentColor"
-                opacity="0.7"
-                transform="rotate(-20 8 18)"
-              />
-              <ellipse
-                cx="24"
-                cy="18"
-                rx="2"
-                ry="4"
-                fill="currentColor"
-                opacity="0.7"
-                transform="rotate(20 24 18)"
-              />
-
-              {/* Movement indicator arrow */}
-              <path
-                d="M26 24 L29 22 L26 20 L27 22 Z"
-                fill="currentColor"
-                opacity="0.6"
-              />
-
-              {/* Footsteps */}
-              <ellipse
-                cx="20"
-                cy="29"
-                rx="2"
-                ry="1.5"
-                fill="currentColor"
-                opacity="0.4"
-              />
-              <ellipse
-                cx="24"
-                cy="30"
-                rx="1.5"
-                ry="1"
-                fill="currentColor"
-                opacity="0.3"
-              />
-              <ellipse
-                cx="22"
-                cy="31"
-                rx="1"
-                ry="0.5"
-                fill="currentColor"
-                opacity="0.2"
+                d="M8 16 L14 20 L24 8"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                className="drop-shadow-sm"
               />
             </svg>
             Эффект присутствия и свободы передвижения
