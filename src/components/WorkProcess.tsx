@@ -60,7 +60,7 @@ const WorkProcess = () => {
             >
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">
+                  <div className="w-12 h-12 bg-gold text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">
                     {step.number}
                   </div>
                   <Icon name={step.icon} size={24} className="text-gold" />
