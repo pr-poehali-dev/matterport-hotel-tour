@@ -167,31 +167,8 @@ const ProblemSolution = () => {
         {/* Solution */}
         <div className="bg-gray-50 rounded-2xl p-12 mb-16 animate-fade-in">
           <h3 className="text-3xl font-light text-center mb-8 relative flex items-center justify-center gap-3">
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
-              <div className="walking-person">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="text-yellow-500"
-                >
-                  <circle cx="12" cy="4" r="2" fill="currentColor" />
-                  <path d="M10 6h4v6l-1 1h-2l-1-1V6z" fill="currentColor" />
-                  <path
-                    className="left-leg"
-                    d="M10 14l1-1v4l-1 2h1l1-2v-4"
-                    fill="currentColor"
-                  />
-                  <path
-                    className="right-leg"
-                    d="M14 14l-1-1v4l1 2h1l-1-2v-4"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-            </div>
-            Эффект присутствия и свобода перемещения
+            <Icon name="Eye" size={32} className="text-blue-600" />
+            Эффект присутствия и свободы передвижения
           </h3>
           <blockquote className="text-xl md:text-2xl text-center leading-relaxed text-text italic">
             "3D-тур — это не просто фото: гость свободно гуляет по залам,
