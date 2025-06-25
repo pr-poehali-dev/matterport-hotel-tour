@@ -27,13 +27,7 @@ const Portfolio = () => {
       link: "https://oknohotel.com/3d-tur/",
       buttonText: "Посмотреть тур на сайте отеля",
     },
-    {
-      title:
-        "Современная моторная яхта Adelya (Leomar, длина 20 м) — это идеальный выбор для аренды яхты в Анталии",
-      iframe: `<iframe width="853" height="480" src="https://my.matterhub.ru/8/CtoYyhXJQQr/&hl=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>`,
-      description:
-        "Роскошная моторная яхта для незабвенного отдыха на средиземноморском побережье",
-    },
+
     {
       title: "21 стол, 2 банкетных зала",
       iframe: `<iframe width="853" height="480" src="https://3d.bogdarnya.ru/6pxyC6jtytC/?m=6pxyC6jtytC&hl=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>`,
@@ -46,6 +40,11 @@ const Portfolio = () => {
       title:
         'Уютный дом "капсула" площадью 32 кв.м. подходит для любителей уединенного и комфортного отдыха на природе.',
       iframe: `<iframe width="853" height="480" src="https://3d.bogdarnya.ru/captyc8ZSao/?m=captyc8ZSao&hl=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>`,
+    },
+    {
+      title:
+        "Современная моторная яхта Adelya (Leomar, длина 20 м) — это идеальный выбор для аренды яхты в Анталии",
+      iframe: `<iframe width="853" height="480" src="https://my.matterhub.ru/8/CtoYyhXJQQr/" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>`,
     },
   ];
 
@@ -85,16 +84,18 @@ const Portfolio = () => {
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <Button
-                  variant="outline"
-                  className="w-full group-hover:bg-gold group-hover:text-white group-hover:border-gold transition-all duration-300"
-                  onClick={() =>
-                    project.link && window.open(project.link, "_blank")
-                  }
-                >
-                  {project.buttonText || "Посмотреть тур"}
-                </Button>
+                {project.description && (
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                )}
+                {project.link && (
+                  <Button
+                    variant="outline"
+                    className="w-full group-hover:bg-gold group-hover:text-white group-hover:border-gold transition-all duration-300"
+                    onClick={() => window.open(project.link, "_blank")}
+                  >
+                    {project.buttonText || "Посмотреть тур"}
+                  </Button>
+                )}
               </CardContent>
             </Card>
           ))}
