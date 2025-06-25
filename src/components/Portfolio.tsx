@@ -6,7 +6,8 @@ const Portfolio = () => {
     {
       title: "Отель Богдарня",
       iframe: `<iframe width="853" height="480" src="https://3d.bogdarnya.ru/AC5PHGftup4/?m=AC5PHGftup4&hl=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>`,
-      description: "20 номеров с уникальным дизайном",
+      description:
+        "Место возрождения русской культуры и быта – именно так можно охарактеризовать отель «Богдарня»",
       link: "https://bogdarnya.ru/catalog/otel-bogdarnya",
       buttonText: "Посмотреть тур на сайте отеля",
     },
