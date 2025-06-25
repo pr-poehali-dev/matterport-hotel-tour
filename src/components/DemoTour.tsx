@@ -40,14 +40,14 @@ const DemoTour = () => {
               key={index}
               className="bg-white px-6 py-3 rounded-full shadow-sm border border-gold/20"
             >
-              <span className="text-sm text-secondary">💡 {tip}</span>
+              <span className="text-sm text-black">💡 {tip}</span>
             </div>
           ))}
         </div>
 
         {/* Features */}
         <div className="mt-16 text-center animate-fade-in">
-          <p className="text-lg text-secondary mb-4">Возможности Matterport:</p>
+          <p className="text-lg text-black mb-4">Возможности Matterport:</p>
           <div className="flex flex-wrap justify-center gap-4">
             {[
               "Инфо-метки с контактами",

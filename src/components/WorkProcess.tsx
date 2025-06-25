@@ -47,7 +47,7 @@ const WorkProcess = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Как мы работаем</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-black max-w-2xl mx-auto">
             Простой и прозрачный процесс от заявки до результата
           </p>
         </div>
@@ -63,10 +63,10 @@ const WorkProcess = () => {
                   <div className="w-12 h-12 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">
                     {step.number}
                   </div>
-                  <Icon name={step.icon} size={24} className="text-amber-600" />
+                  <Icon name={step.icon} size={24} className="text-gold" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <p className="text-black">{step.description}</p>
               </CardContent>
             </Card>
           ))}
@@ -78,10 +78,10 @@ const WorkProcess = () => {
               <Icon
                 name="FileCheck"
                 size={32}
-                className="text-amber-600 mx-auto mb-3"
+                className="text-gold mx-auto mb-3"
               />
               <h4 className="font-semibold mb-2">Договор</h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-black">
                 Официальное оформление всех работ
               </p>
             </CardContent>
@@ -92,10 +92,10 @@ const WorkProcess = () => {
               <Icon
                 name="CreditCard"
                 size={32}
-                className="text-amber-600 mx-auto mb-3"
+                className="text-gold mx-auto mb-3"
               />
               <h4 className="font-semibold mb-2">Оплата после публикации</h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-black">
                 Платите только за готовый результат
               </p>
             </CardContent>
@@ -106,10 +106,10 @@ const WorkProcess = () => {
               <Icon
                 name="Package"
                 size={32}
-                className="text-amber-600 mx-auto mb-3"
+                className="text-gold mx-auto mb-3"
               />
               <h4 className="font-semibold mb-2">Что включено</h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-black">
                 Съёмка, обработка, интеграция, аналитика
               </p>
             </CardContent>
