@@ -95,7 +95,7 @@ const ProblemSolution = () => {
     {
       icon: "MousePointerClick",
       title: "Низкое вовлечение",
-      description: "Посетители быстро покидают сайт",
+      description: "Посетители быстрее покидают сайт",
     },
     {
       icon: "Camera",
