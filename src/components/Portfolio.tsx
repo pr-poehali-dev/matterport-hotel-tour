@@ -20,14 +20,6 @@ const Portfolio = () => {
       buttonText: "Посмотреть тур на сайте отеля",
     },
     {
-      title: "8 апартаментов, переговорная, лаунж зона",
-      iframe: `<iframe width="853" height="480" src="https://my.matterhub.ru/8/yhmcys2nrfN/?m=yhmcys2nrfN&hl=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>`,
-      description:
-        'Наследие Петра I в современном интерьере апарт-отеля "Окно"',
-      link: "https://oknohotel.com/3d-tur/",
-      buttonText: "Посмотреть тур на сайте отеля",
-    },
-    {
       title: "Премиальная вилла в Подмосковье",
       image:
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop",
