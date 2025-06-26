@@ -7,17 +7,81 @@ import Icon from "@/components/ui/icon";
 import { useForm } from "@formspree/react";
 
 const FinalCTA = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    area: "",
-  });
+  const [phone, setPhone] = useState("");
+  const [phoneError, setPhoneError] = useState("");
 
   // Используем демо-форму Formspree (в продакшене нужно будет заменить на реальный ID)
   const [state, handleSubmit] = useForm("demo");
 
+  // Функция для форматирования номера телефона
+  const formatPhoneNumber = (value: string) => {
+    // Удаляем все символы кроме цифр
+    const numbers = value.replace(/\D/g, "");
+
+    // Если первая цифра не 7, добавляем 7
+    let formattedNumbers = numbers;
+    if (numbers.length > 0 && numbers[0] !== "7") {
+      formattedNumbers = "7" + numbers;
+    }
+
+    // Ограничиваем до 11 цифр (7 + 10 цифр номера)
+    formattedNumbers = formattedNumbers.slice(0, 11);
+
+    // Форматируем в +7 (XXX) XXX-XX-XX
+    if (formattedNumbers.length >= 1) {
+      let formatted = "+7";
+      if (formattedNumbers.length > 1) {
+        const rest = formattedNumbers.slice(1);
+        if (rest.length > 0) formatted += " (";
+        if (rest.length >= 3) {
+          formatted += rest.slice(0, 3) + ")";
+          if (rest.length > 3) formatted += " ";
+        } else {
+          formatted += rest;
+        }
+        if (rest.length > 3) {
+          const middle = rest.slice(3, 6);
+          formatted += middle;
+          if (rest.length > 6) formatted += "-";
+        }
+        if (rest.length > 6) {
+          const end1 = rest.slice(6, 8);
+          formatted += end1;
+          if (rest.length > 8) formatted += "-";
+        }
+        if (rest.length > 8) {
+          formatted += rest.slice(8, 10);
+        }
+      }
+      return formatted;
+    }
+    return "+7";
+  };
+
+  // Валидация номера телефона
+  const validatePhone = (phoneNumber: string) => {
+    const numbers = phoneNumber.replace(/\D/g, "");
+    if (numbers.length !== 11 || numbers[0] !== "7") {
+      return "Введите корректный номер телефона в формате +7 (XXX) XXX-XX-XX";
+    }
+    return "";
+  };
+
+  const handlePhoneChange = (value: string) => {
+    const formatted = formatPhoneNumber(value);
+    setPhone(formatted);
+    setPhoneError("");
+  };
+
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Валидация перед отправкой
+    const error = validatePhone(phone);
+    if (error) {
+      setPhoneError(error);
+      return;
+    }
 
     // Создаем FormData для отправки
     const formElement = e.target as HTMLFormElement;
@@ -26,18 +90,15 @@ const FinalCTA = () => {
     await handleSubmit(formDataToSend);
 
     if (state.succeeded) {
-      setFormData({ name: "", phone: "", area: "" });
+      setPhone("");
+      setPhoneError("");
     }
-  };
-
-  const handleChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
     <section
       id="final-cta"
-      className="py-20 bg-gradient-to-br from-gold/90 via-amber-600 to-amber-700 text-white"
+      className="py-20 bg-gradient-to-br from-amber-400 via-gold to-amber-600 text-white"
     >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-12 animate-fade-in">
@@ -59,67 +120,33 @@ const FinalCTA = () => {
             </CardHeader>
             <CardContent>
               <form onSubmit={onSubmit} className="space-y-6">
-                <div
-                  className="animate-fade-in"
-                  style={{ animationDelay: "0.1s" }}
-                >
-                  <Label htmlFor="name" className="text-gray-700 font-medium">
-                    Имя
-                  </Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="Введите Ваше имя"
-                    value={formData.name}
-                    onChange={(e) => handleChange("name", e.target.value)}
-                    className="mt-2 h-12 focus:ring-gold focus:border-gold"
-                    required
-                  />
-                </div>
-
-                <div
-                  className="animate-fade-in"
-                  style={{ animationDelay: "0.2s" }}
-                >
+                <div className="animate-fade-in">
                   <Label htmlFor="phone" className="text-gray-700 font-medium">
-                    Телефон/WhatsApp
+                    Телефон/WhatsApp *
                   </Label>
                   <Input
                     id="phone"
                     name="phone"
                     type="tel"
                     placeholder="+7 (999) 123-45-67"
-                    value={formData.phone}
-                    onChange={(e) => handleChange("phone", e.target.value)}
-                    className="mt-2 h-12 focus:ring-gold focus:border-gold"
+                    value={phone}
+                    onChange={(e) => handlePhoneChange(e.target.value)}
+                    className={`mt-2 h-12 focus:ring-gold focus:border-gold ${
+                      phoneError
+                        ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+                        : ""
+                    }`}
                     required
                   />
-                </div>
-
-                <div
-                  className="animate-fade-in"
-                  style={{ animationDelay: "0.3s" }}
-                >
-                  <Label htmlFor="area" className="text-gray-700 font-medium">
-                    Площадь пространства (м²)
-                  </Label>
-                  <Input
-                    id="area"
-                    name="area"
-                    type="number"
-                    placeholder="Например, 150"
-                    value={formData.area}
-                    onChange={(e) => handleChange("area", e.target.value)}
-                    className="mt-2 h-12 focus:ring-gold focus:border-gold"
-                  />
+                  {phoneError && (
+                    <p className="mt-1 text-sm text-red-600">{phoneError}</p>
+                  )}
                 </div>
 
                 <Button
                   type="submit"
-                  disabled={state.submitting}
+                  disabled={state.submitting || !phone}
                   className="w-full h-14 text-lg bg-gold hover:bg-amber-600 shadow-lg animate-fade-in transform hover:scale-105 transition-all duration-300 disabled:opacity-50"
-                  style={{ animationDelay: "0.4s" }}
                 >
                   {state.submitting
                     ? "Отправляем..."
