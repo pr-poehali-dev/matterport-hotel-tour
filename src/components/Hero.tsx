@@ -98,14 +98,27 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
             <Button
-              className="text-lg px-10 py-6 text-white hover:opacity-90 transition-opacity border-2 border-white animate-pulse"
+              className="text-lg px-10 py-6 text-white transition-all duration-300 relative"
               style={{
                 backgroundColor: "#d4af37",
-                boxShadow: "0 0 20px rgba(255, 255, 255, 0.3)",
               }}
               onClick={() => scrollToSection("demo-tour")}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow =
+                  "0 0 20px rgba(255, 255, 255, 0.4)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "none";
+              }}
             >
-              Смотреть пример
+              <span className="relative z-10">Смотреть пример</span>
+              <div
+                className="absolute inset-0 border-2 border-white rounded-md"
+                style={{
+                  animation:
+                    "pulse-border 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+                }}
+              />
             </Button>
             <Button
               variant="outline"
@@ -138,6 +151,16 @@ const Hero = () => {
           }
           50% {
             transform: scale(1.05) translateY(-10px);
+          }
+        }
+
+        @keyframes pulse-border {
+          0%,
+          100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.5;
           }
         }
       `}</style>
