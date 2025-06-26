@@ -13,19 +13,19 @@ const Hero = () => {
       {/* Navigation Menu */}
       <nav className="relative z-20">
         <div className="px-4 py-4">
-          <div className="flex justify-between items-center w-full">
+          <div className="flex justify-between items-center w-full gap-4">
             {/* Logo */}
             <div className="flex-shrink-0">
               <img
                 src="https://cdn.poehali.dev/files/14b29ab4-0afc-439e-bdd1-3a08ac6f64d6.png"
                 alt="3D-TOUR.PRO"
-                className="h-12 w-auto"
+                className="h-6 w-auto"
               />
             </div>
 
-            {/* Navigation buttons - centered between logo and phone */}
-            <div className="hidden md:flex items-center justify-center flex-1 mx-8">
-              <div className="flex items-center space-x-8">
+            {/* Navigation buttons - centered with equal spacing */}
+            <div className="hidden md:flex items-center justify-center flex-1">
+              <div className="flex items-center space-x-6 lg:space-x-8">
                 <button
                   onClick={() => scrollToSection("demo-tour")}
                   className="text-gray-700 hover:text-[#d4af37] transition-colors"
