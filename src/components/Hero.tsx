@@ -19,34 +19,34 @@ const Hero = () => {
               <img
                 src="https://cdn.poehali.dev/files/14b29ab4-0afc-439e-bdd1-3a08ac6f64d6.png"
                 alt="3D-TOUR.PRO"
-                className="h-8 w-auto"
+                className="h-6 w-auto"
               />
             </div>
 
-            {/* Navigation buttons - responsive spacing */}
-            <div className="hidden md:flex items-center flex-1 justify-start ml-8">
-              <div className="flex items-center space-x-6 lg:space-x-8">
+            {/* Navigation buttons - full width distribution */}
+            <div className="hidden md:flex items-center flex-1 justify-center mx-8">
+              <div className="flex items-center justify-between w-full max-w-2xl">
                 <button
                   onClick={() => scrollToSection("demo-tour")}
-                  className="text-gray-700 hover:text-[#d4af37] transition-colors"
+                  className="text-gray-700 hover:text-[#d4af37] transition-colors text-sm"
                 >
                   Попробовать 3D-тур
                 </button>
                 <button
                   onClick={() => scrollToSection("portfolio")}
-                  className="text-gray-700 hover:text-[#d4af37] transition-colors"
+                  className="text-gray-700 hover:text-[#d4af37] transition-colors text-sm"
                 >
                   Портфолио
                 </button>
                 <button
                   onClick={() => scrollToSection("testimonials")}
-                  className="text-gray-700 hover:text-[#d4af37] transition-colors"
+                  className="text-gray-700 hover:text-[#d4af37] transition-colors text-sm"
                 >
                   Отзывы
                 </button>
                 <button
                   onClick={() => scrollToSection("pricing")}
-                  className="text-gray-700 hover:text-[#d4af37] transition-colors"
+                  className="text-gray-700 hover:text-[#d4af37] transition-colors text-sm"
                 >
                   Цены
                 </button>
@@ -56,10 +56,10 @@ const Hero = () => {
             {/* Phone number */}
             <div className="flex-shrink-0">
               <a
-                href="tel:+7(999)123-45-67"
+                href="tel:+79190223316"
                 className="text-black font-playfair text-sm hover:text-[#d4af37] transition-colors"
               >
-                +7 (999) 123-45-67
+                +7 919 022-33-16
               </a>
             </div>
           </div>
