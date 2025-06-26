@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
 import { useForm } from "@formspree/react";
 
@@ -96,10 +97,7 @@ const FinalCTA = () => {
   };
 
   return (
-    <section
-      id="final-cta"
-      className="py-20 bg-gradient-to-br from-amber-400 via-gold to-amber-600 text-white"
-    >
+    <section id="final-cta" className="py-20 bg-gold text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -121,6 +119,32 @@ const FinalCTA = () => {
             <CardContent>
               <form onSubmit={onSubmit} className="space-y-6">
                 <div className="animate-fade-in">
+                  <Label htmlFor="name" className="text-gray-700 font-medium">
+                    Имя
+                  </Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Ваше имя"
+                    className="mt-2 h-12 focus:ring-gold focus:border-gold"
+                  />
+                </div>
+
+                <div className="animate-fade-in">
+                  <Label htmlFor="email" className="text-gray-700 font-medium">
+                    Email
+                  </Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="your@email.com"
+                    className="mt-2 h-12 focus:ring-gold focus:border-gold"
+                  />
+                </div>
+
+                <div className="animate-fade-in">
                   <Label htmlFor="phone" className="text-gray-700 font-medium">
                     Телефон/WhatsApp *
                   </Label>
@@ -141,6 +165,21 @@ const FinalCTA = () => {
                   {phoneError && (
                     <p className="mt-1 text-sm text-red-600">{phoneError}</p>
                   )}
+                </div>
+
+                <div className="animate-fade-in">
+                  <Label
+                    htmlFor="message"
+                    className="text-gray-700 font-medium"
+                  >
+                    Сообщение
+                  </Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="Расскажите о вашем проекте или задайте вопрос"
+                    className="mt-2 min-h-[100px] focus:ring-gold focus:border-gold"
+                  />
                 </div>
 
                 <Button
