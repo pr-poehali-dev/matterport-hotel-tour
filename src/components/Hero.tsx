@@ -19,12 +19,12 @@ const Hero = () => {
               <img
                 src="https://cdn.poehali.dev/files/14b29ab4-0afc-439e-bdd1-3a08ac6f64d6.png"
                 alt="3D-TOUR.PRO"
-                className="h-6 w-auto"
+                className="h-8 w-auto"
               />
             </div>
 
-            {/* Navigation buttons - centered with equal spacing */}
-            <div className="hidden md:flex items-center justify-center flex-1">
+            {/* Navigation buttons - responsive spacing */}
+            <div className="hidden md:flex items-center flex-1 justify-start ml-8">
               <div className="flex items-center space-x-6 lg:space-x-8">
                 <button
                   onClick={() => scrollToSection("demo-tour")}
@@ -56,10 +56,10 @@ const Hero = () => {
             {/* Phone number */}
             <div className="flex-shrink-0">
               <a
-                href="tel:+79190223316"
-                className="text-[#d4af37] font-semibold hover:text-[#b8941f] transition-colors text-lg whitespace-nowrap"
+                href="tel:+7(999)123-45-67"
+                className="text-black font-playfair text-sm hover:text-[#d4af37] transition-colors"
               >
-                +7 919 022 33 16
+                +7 (999) 123-45-67
               </a>
             </div>
           </div>
