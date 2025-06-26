@@ -4,15 +4,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import Icon from "@/components/ui/icon";
 import { useForm } from "@formspree/react";
 
 const FinalCTA = () => {
   const [phone, setPhone] = useState("");
   const [phoneError, setPhoneError] = useState("");
+  const [consent, setConsent] = useState(false);
 
-  // Используем демо-форму Formspree (в продакшене нужно будет заменить на реальный ID)
-  const [state, handleSubmit] = useForm("demo");
+  // Формспри форма настроена на отправку на romanpetrov369@yandex.ru
+  const [state, handleSubmit] = useForm("xpwagqjz");
 
   // Функция для форматирования номера телефона
   const formatPhoneNumber = (value: string) => {
@@ -84,6 +86,11 @@ const FinalCTA = () => {
       return;
     }
 
+    if (!consent) {
+      alert("Необходимо согласие на обработку персональных данных");
+      return;
+    }
+
     // Создаем FormData для отправки
     const formElement = e.target as HTMLFormElement;
     const formDataToSend = new FormData(formElement);
@@ -93,11 +100,18 @@ const FinalCTA = () => {
     if (state.succeeded) {
       setPhone("");
       setPhoneError("");
+      setConsent(false);
     }
   };
 
   return (
-    <section id="final-cta" className="py-20 bg-gold text-white">
+    <section
+      id="final-cta"
+      className="py-20 relative min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1974&auto=format&fit=crop')`,
+      }}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -182,9 +196,40 @@ const FinalCTA = () => {
                   />
                 </div>
 
+                <div className="animate-fade-in">
+                  <div className="flex items-start space-x-3">
+                    <Checkbox
+                      id="consent"
+                      checked={consent}
+                      onCheckedChange={(checked) => setConsent(!!checked)}
+                      className="mt-1 border-2 border-gold data-[state=checked]:bg-gold data-[state=checked]:border-gold"
+                      required
+                    />
+                    <Label
+                      htmlFor="consent"
+                      className="text-sm text-gray-600 leading-relaxed cursor-pointer"
+                    >
+                      Я согласен(а) на обработку персональных данных в
+                      соответствии с{" "}
+                      <a
+                        href="#"
+                        className="text-gold hover:underline"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          alert(
+                            "Политика конфиденциальности: Ваши персональные данные используются исключительно для связи с вами по вашему запросу и не передаются третьим лицам.",
+                          );
+                        }}
+                      >
+                        политикой конфиденциальности
+                      </a>
+                    </Label>
+                  </div>
+                </div>
+
                 <Button
                   type="submit"
-                  disabled={state.submitting || !phone}
+                  disabled={state.submitting || !phone || !consent}
                   className="w-full h-14 text-lg bg-gold hover:bg-amber-600 shadow-lg animate-fade-in transform hover:scale-105 transition-all duration-300 disabled:opacity-50"
                 >
                   {state.submitting
