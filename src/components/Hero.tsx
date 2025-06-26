@@ -70,7 +70,21 @@ const Hero = () => {
         <div className="container mx-auto px-4 text-center relative z-10 animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-light leading-tight mb-8 max-w-6xl mx-auto text-black">
             Ваш интерьер уникален —{" "}
-            <span className="text-[#d4af37] font-medium">
+            <span
+              className="text-[#d4af37] font-medium"
+              style={{
+                textShadow: `
+                0 0 1px rgba(255, 255, 255, 0.8),
+                1px 1px 0 rgba(255, 255, 255, 0.3),
+                -1px -1px 0 rgba(255, 255, 255, 0.3),
+                1px -1px 0 rgba(255, 255, 255, 0.2),
+                -1px 1px 0 rgba(255, 255, 255, 0.2),
+                2px 2px 2px rgba(255, 255, 255, 0.1),
+                0 2px 1px rgba(255, 255, 255, 0.15),
+                2px 0 1px rgba(255, 255, 255, 0.15)
+              `,
+              }}
+            >
               покажите его по-настоящему
             </span>
           </h1>
