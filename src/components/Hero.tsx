@@ -43,7 +43,7 @@ const Hero = () => {
                 <img
                   src="https://cdn.poehali.dev/files/7db32aa0-0df6-4c3c-94f4-ef2483d1949c.png"
                   alt="3D-TOUR.PRO"
-                  className="h-6 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.6)]"
+                  className="h-12 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.6)]"
                 />
               </button>
             </div>
@@ -82,7 +82,7 @@ const Hero = () => {
             <div className="flex-shrink-0">
               <a
                 href="tel:+79190223316"
-                className="text-black font-playfair text-sm hover:text-[#d4af37] transition-colors"
+                className="text-black font-playfair text-2xl hover:text-[#d4af37] transition-colors"
               >
                 +7 919 022-33-16
               </a>
