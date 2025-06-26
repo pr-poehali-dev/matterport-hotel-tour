@@ -6,15 +6,11 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import Icon from "@/components/ui/icon";
-import { useForm } from "@formspree/react";
 
 const FinalCTA = () => {
   const [phone, setPhone] = useState("");
   const [phoneError, setPhoneError] = useState("");
   const [consent, setConsent] = useState(false);
-
-  // Формспри форма настроена на отправку на romanpetrov369@yandex.ru
-  const [state, handleSubmit] = useForm("xpwagqjz");
 
   // Функция для форматирования номера телефона
   const formatPhoneNumber = (value: string) => {
@@ -91,17 +87,42 @@ const FinalCTA = () => {
       return;
     }
 
-    // Создаем FormData для отправки
+    // Получаем данные формы
     const formElement = e.target as HTMLFormElement;
-    const formDataToSend = new FormData(formElement);
+    const formData = new FormData(formElement);
 
-    await handleSubmit(formDataToSend);
+    // Формируем сообщение для отправки
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
 
-    if (state.succeeded) {
-      setPhone("");
-      setPhoneError("");
-      setConsent(false);
+    const messageText = `Новая заявка с сайта:
+📝 Имя: ${name || "Не указано"}
+📧 Email: ${email || "Не указан"}
+📱 Телефон: ${phone}
+💬 Сообщение: ${message || "Не указано"}`;
+
+    // Формируем ссылки для мессенджеров
+    const whatsappUrl = `https://wa.me/79190223316?text=${encodeURIComponent(messageText)}`;
+    const telegramUrl = `https://t.me/Cap_Rizo?text=${encodeURIComponent(messageText)}`;
+
+    // Показываем варианты отправки
+    const choice = confirm(
+      "Выберите способ отправки заявки:\n\nОК - WhatsApp\nОтмена - Telegram",
+    );
+
+    // Открываем выбранный мессенджер
+    if (choice) {
+      window.open(whatsappUrl, "_blank");
+    } else {
+      window.open(telegramUrl, "_blank");
     }
+
+    // Очищаем форму после отправки
+    setPhone("");
+    setPhoneError("");
+    setConsent(false);
+    formElement.reset();
   };
 
   return (
@@ -109,7 +130,7 @@ const FinalCTA = () => {
       id="final-cta"
       className="py-20 relative min-h-screen bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1974&auto=format&fit=crop')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://cdn.poehali.dev/files/6507a63e-3546-4823-9e1f-802584502bda.png')`,
       }}
     >
       <div className="container mx-auto px-4">
@@ -229,43 +250,11 @@ const FinalCTA = () => {
 
                 <Button
                   type="submit"
-                  disabled={state.submitting || !phone || !consent}
+                  disabled={!phone || !consent}
                   className="w-full h-14 text-lg bg-gold hover:bg-amber-600 shadow-lg animate-fade-in transform hover:scale-105 transition-all duration-300 disabled:opacity-50"
                 >
-                  {state.submitting
-                    ? "Отправляем..."
-                    : "Получить индивидуальное предложение"}
+                  Получить индивидуальное предложение
                 </Button>
-
-                {state.succeeded && (
-                  <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
-                    <div className="flex items-center">
-                      <Icon
-                        name="CheckCircle"
-                        size={20}
-                        className="text-green-600 mr-2"
-                      />
-                      <span className="text-green-800">
-                        Заявка успешно отправлена!
-                      </span>
-                    </div>
-                  </div>
-                )}
-
-                {state.errors && state.errors.length > 0 && (
-                  <div className="mt-4 p-4 bg-red-50 rounded-lg border border-red-200">
-                    <div className="flex items-center">
-                      <Icon
-                        name="AlertCircle"
-                        size={20}
-                        className="text-red-600 mr-2"
-                      />
-                      <span className="text-red-800">
-                        Ошибка отправки. Попробуйте ещё раз.
-                      </span>
-                    </div>
-                  </div>
-                )}
               </form>
 
               <div className="mt-8 p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
