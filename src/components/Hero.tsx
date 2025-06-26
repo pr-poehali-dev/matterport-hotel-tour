@@ -1,6 +1,18 @@
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -8,19 +20,32 @@ const Hero = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Navigation Menu */}
-      <nav className="relative z-20">
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? "bg-white shadow-lg" : "bg-transparent"
+        }`}
+      >
         <div className="px-4 py-4">
           <div className="flex justify-between items-center w-full gap-4">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <img
-                src="https://cdn.poehali.dev/files/14b29ab4-0afc-439e-bdd1-3a08ac6f64d6.png"
-                alt="3D-TOUR.PRO"
-                className="h-6 w-auto"
-              />
+              <button
+                onClick={scrollToTop}
+                className="transition-all duration-300 hover:scale-105 group"
+              >
+                <img
+                  src="https://cdn.poehali.dev/files/7db32aa0-0df6-4c3c-94f4-ef2483d1949c.png"
+                  alt="3D-TOUR.PRO"
+                  className="h-6 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.6)]"
+                />
+              </button>
             </div>
 
             {/* Navigation buttons - full width distribution */}
@@ -67,7 +92,7 @@ const Hero = () => {
       </nav>
 
       {/* Hero Content */}
-      <div className="flex-1 flex items-center justify-center">
+      <div className="flex-1 flex items-center justify-center pt-16">
         {/* Background with reception photo and parallax effect */}
         <div className="absolute inset-0">
           <div
