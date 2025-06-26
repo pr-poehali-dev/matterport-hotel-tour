@@ -43,7 +43,7 @@ const Hero = () => {
                 <img
                   src="https://cdn.poehali.dev/files/7db32aa0-0df6-4c3c-94f4-ef2483d1949c.png"
                   alt="3D-TOUR.PRO"
-                  className="h-6 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.6)]"
+                  className="h-6 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_20px_rgba(212,175,55,0.9)] group-hover:brightness-110"
                 />
               </button>
             </div>
