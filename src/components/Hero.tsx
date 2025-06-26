@@ -98,8 +98,11 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
             <Button
-              className="text-lg px-10 py-6 text-white hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: "#d4af37" }}
+              className="text-lg px-10 py-6 text-white hover:opacity-90 transition-opacity border-2 border-white animate-pulse"
+              style={{
+                backgroundColor: "#d4af37",
+                boxShadow: "0 0 20px rgba(255, 255, 255, 0.3)",
+              }}
               onClick={() => scrollToSection("demo-tour")}
             >
               Смотреть пример
