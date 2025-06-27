@@ -102,41 +102,39 @@ const Pricing = () => {
       return;
     }
 
-    try {
-      const response = await fetch(
-        "https://formspree.io/f/romanpetrov369@yandex.ru",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            phone: formData.phone,
-            email: formData.email,
-            message: formData.message,
-            package: selectedPackage,
-            subject: `Заявка с сайта - ${selectedPackage}`,
-          }),
-        },
-      );
+    // Формируем сообщение для отправки
+    const messageText = `Новая заявка с сайта:
+📝 Имя: ${formData.name || "Не указано"}
+📧 Email: ${formData.email || "Не указан"}
+📱 Телефон: ${formData.phone}
+💬 Сообщение: ${formData.message || "Не указано"}
+📦 Выбранный пакет: ${selectedPackage}`;
 
-      if (response.ok) {
-        alert("Заявка отправлена! Свяжемся с вами в ближайшее время.");
-        setIsDialogOpen(false);
-        setFormData({
-          name: "",
-          phone: "",
-          email: "",
-          message: "",
-          consent: false,
-        });
-      } else {
-        alert("Ошибка отправки. Попробуйте позже.");
-      }
-    } catch (error) {
-      alert("Ошибка отправки. Попробуйте позже.");
+    // Формируем ссылки для мессенджеров
+    const whatsappUrl = `https://wa.me/79190223316?text=${encodeURIComponent(messageText)}`;
+    const telegramUrl = `https://t.me/Cap_Rizo?text=${encodeURIComponent(messageText)}`;
+
+    // Показываем варианты отправки
+    const choice = confirm(
+      "Выберите способ отправки заявки:\n\nОК - WhatsApp\nОтмена - Telegram",
+    );
+
+    // Открываем выбранный мессенджер
+    if (choice) {
+      window.open(whatsappUrl, "_blank");
+    } else {
+      window.open(telegramUrl, "_blank");
     }
+
+    // Очищаем форму после отправки
+    setIsDialogOpen(false);
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      message: "",
+      consent: false,
+    });
   };
 
   const packages = [
