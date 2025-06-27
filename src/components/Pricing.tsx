@@ -1,9 +1,74 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import Icon from "@/components/ui/icon";
 
 const Pricing = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+    consent: false,
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.consent) {
+      alert("Необходимо согласие на обработку данных");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "https://formspree.io/f/romanpetrov369@yandex.ru",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            phone: formData.phone,
+            email: formData.email,
+            message: formData.message,
+            subject: "Заявка с сайта - Кастомизация пакета",
+          }),
+        },
+      );
+
+      if (response.ok) {
+        alert("Заявка отправлена! Свяжемся с вами в ближайшее время.");
+        setIsDialogOpen(false);
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          message: "",
+          consent: false,
+        });
+      } else {
+        alert("Ошибка отправки. Попробуйте позже.");
+      }
+    } catch (error) {
+      alert("Ошибка отправки. Попробуйте позже.");
+    }
+  };
+
   const packages = [
     {
       name: "Базовый",
@@ -130,6 +195,7 @@ const Pricing = () => {
                   <Button
                     className={`w-full transform hover:scale-105 transition-all duration-300 ${pkg.popular ? "bg-gold hover:bg-amber-600" : ""}`}
                     variant={pkg.popular ? "default" : "outline"}
+                    onClick={() => setIsDialogOpen(true)}
                   >
                     Выбрать пакет
                   </Button>
@@ -150,6 +216,80 @@ const Pricing = () => {
             </p>
           </div>
         </div>
+
+        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle>Отправить заявку</DialogTitle>
+            </DialogHeader>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <Label htmlFor="name">Имя *</Label>
+                <Input
+                  id="name"
+                  required
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                />
+              </div>
+              <div>
+                <Label htmlFor="phone">Телефон *</Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  required
+                  value={formData.phone}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
+                />
+              </div>
+              <div>
+                <Label htmlFor="email">Email *</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                />
+              </div>
+              <div>
+                <Label htmlFor="message">Сообщение</Label>
+                <Textarea
+                  id="message"
+                  rows={3}
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
+                />
+              </div>
+              <div className="flex items-center space-x-2">
+                <Checkbox
+                  id="consent"
+                  checked={formData.consent}
+                  onCheckedChange={(checked) =>
+                    setFormData({ ...formData, consent: !!checked })
+                  }
+                />
+                <Label htmlFor="consent" className="text-sm">
+                  Согласен на обработку персональных данных *
+                </Label>
+              </div>
+              <Button
+                type="submit"
+                className="w-full bg-gold hover:bg-amber-600"
+              >
+                Отправить заявку
+              </Button>
+            </form>
+          </DialogContent>
+        </Dialog>
       </section>
     </>
   );
