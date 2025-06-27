@@ -167,7 +167,7 @@ const ProblemSolution = () => {
         {/* Solution */}
         <div className="bg-gray-50 rounded-2xl p-12 mb-16 animate-fade-in">
           <h3 className="text-3xl font-light text-center mb-8">
-            <span className="text-golden font-medium drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] [text-shadow:0_0_15px_rgba(255,255,255,0.9)]">
+            <span className="font-medium drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] [text-shadow:0_0_15px_rgba(255,255,255,0.9)] text-[#d4af37]">
               Эффект присутствия
             </span>{" "}
             и свободы передвижения
