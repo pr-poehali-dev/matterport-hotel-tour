@@ -167,7 +167,16 @@ const ProblemSolution = () => {
         {/* Solution */}
         <div className="bg-gray-50 rounded-2xl p-12 mb-16 animate-fade-in">
           <h3 className="text-3xl font-light text-center mb-8">
-            Эффект присутствия и свободы передвижения
+            <span
+              className="text-transparent bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 bg-clip-text"
+              style={{
+                textShadow:
+                  "0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.1)",
+              }}
+            >
+              Эффект присутствия
+            </span>{" "}
+            и свободы передвижения
           </h3>
           <blockquote className="text-xl md:text-2xl text-center leading-relaxed text-text italic">
             "3D-тур — это не просто фото: гость свободно гуляет по залам,
