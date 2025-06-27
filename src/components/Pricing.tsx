@@ -141,7 +141,10 @@ const Pricing = () => {
           <div className="text-center animate-fade-in">
             <p className="text-lg text-gray-600">
               Нужна кастомизация?{" "}
-              <button className="text-gold hover:underline font-semibold hover:text-amber-600 transition-colors">
+              <button
+                onClick={() => setIsDialogOpen(true)}
+                className="text-gold hover:underline font-semibold hover:text-amber-600 transition-colors"
+              >
                 Свяжитесь с нами
               </button>
             </p>
