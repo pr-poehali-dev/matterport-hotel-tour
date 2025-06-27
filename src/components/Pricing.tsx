@@ -18,6 +18,7 @@ import Icon from "@/components/ui/icon";
 const Pricing = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState<string>("");
+  const [phoneError, setPhoneError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -26,11 +27,73 @@ const Pricing = () => {
     consent: false,
   });
 
+  // Функция для форматирования номера телефона
+  const formatPhoneNumber = (value: string) => {
+    // Удаляем все символы кроме цифр
+    const numbers = value.replace(/\D/g, "");
+
+    // Если первая цифра не 7, добавляем 7
+    let formattedNumbers = numbers;
+    if (numbers.length > 0 && numbers[0] !== "7") {
+      formattedNumbers = "7" + numbers;
+    }
+
+    // Ограничиваем до 11 цифр (7 + 10 цифр номера)
+    formattedNumbers = formattedNumbers.slice(0, 11);
+
+    // Форматируем в +7 (XXX) XXX-XX-XX
+    if (formattedNumbers.length >= 1) {
+      let formatted = "+7";
+      if (formattedNumbers.length > 1) {
+        const rest = formattedNumbers.slice(1);
+        if (rest.length > 0) formatted += " (";
+        if (rest.length >= 3) {
+          formatted += rest.slice(0, 3) + ")";
+          if (rest.length > 3) formatted += " ";
+        } else {
+          formatted += rest;
+        }
+        if (rest.length > 3) {
+          const middle = rest.slice(3, 6);
+          formatted += middle;
+          if (rest.length > 6) formatted += "-";
+        }
+        if (rest.length > 6) {
+          const end1 = rest.slice(6, 8);
+          formatted += end1;
+          if (rest.length > 8) formatted += "-";
+        }
+        if (rest.length > 8) {
+          formatted += rest.slice(8, 10);
+        }
+      }
+      return formatted;
+    }
+    return "+7";
+  };
+
+  // Валидация номера телефона
+  const validatePhone = (phoneNumber: string) => {
+    const numbers = phoneNumber.replace(/\D/g, "");
+    if (numbers.length !== 11 || numbers[0] !== "7") {
+      return "Введите корректный номер телефона в формате +7 (XXX) XXX-XX-XX";
+    }
+    return "";
+  };
+
+  const handlePhoneChange = (value: string) => {
+    const formatted = formatPhoneNumber(value);
+    setFormData({ ...formData, phone: formatted });
+    setPhoneError("");
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.phone.trim()) {
-      alert("Необходимо указать номер телефона");
+    // Валидация перед отправкой
+    const error = validatePhone(formData.phone);
+    if (error) {
+      setPhoneError(error);
       return;
     }
 
@@ -251,16 +314,23 @@ const Pricing = () => {
                 />
               </div>
               <div>
-                <Label htmlFor="phone">Телефон *</Label>
+                <Label htmlFor="phone">Телефон/WhatsApp *</Label>
                 <Input
                   id="phone"
                   type="tel"
+                  placeholder="+7 (999) 123-45-67"
                   required
                   value={formData.phone}
-                  onChange={(e) =>
-                    setFormData({ ...formData, phone: e.target.value })
+                  onChange={(e) => handlePhoneChange(e.target.value)}
+                  className={
+                    phoneError
+                      ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+                      : ""
                   }
                 />
+                {phoneError && (
+                  <p className="mt-1 text-sm text-red-600">{phoneError}</p>
+                )}
               </div>
               <div>
                 <Label htmlFor="email">Email</Label>
