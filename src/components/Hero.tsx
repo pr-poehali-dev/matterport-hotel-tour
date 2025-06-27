@@ -32,7 +32,7 @@ const Hero = () => {
           isScrolled ? "bg-white shadow-lg" : "bg-transparent"
         }`}
       >
-        <div className="px-4 py-4">
+        <div className="px-8 py-4">
           <div className="flex justify-between items-center w-full gap-4">
             {/* Logo */}
             <div className="flex-shrink-0">
