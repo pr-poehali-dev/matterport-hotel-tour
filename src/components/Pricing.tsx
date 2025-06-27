@@ -17,6 +17,7 @@ import Icon from "@/components/ui/icon";
 
 const Pricing = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState<string>("");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -27,6 +28,11 @@ const Pricing = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!formData.phone.trim()) {
+      alert("Необходимо указать номер телефона");
+      return;
+    }
 
     if (!formData.consent) {
       alert("Необходимо согласие на обработку данных");
@@ -46,7 +52,8 @@ const Pricing = () => {
             phone: formData.phone,
             email: formData.email,
             message: formData.message,
-            subject: "Заявка с сайта - Кастомизация пакета",
+            package: selectedPackage,
+            subject: `Заявка с сайта - ${selectedPackage}`,
           }),
         },
       );
@@ -195,7 +202,10 @@ const Pricing = () => {
                   <Button
                     className={`w-full transform hover:scale-105 transition-all duration-300 ${pkg.popular ? "bg-gold hover:bg-amber-600" : ""}`}
                     variant={pkg.popular ? "default" : "outline"}
-                    onClick={() => setIsDialogOpen(true)}
+                    onClick={() => {
+                      setSelectedPackage(pkg.name);
+                      setIsDialogOpen(true);
+                    }}
                   >
                     Выбрать пакет
                   </Button>
@@ -208,7 +218,10 @@ const Pricing = () => {
             <p className="text-lg text-gray-600">
               Нужна кастомизация?{" "}
               <button
-                onClick={() => setIsDialogOpen(true)}
+                onClick={() => {
+                  setSelectedPackage("Кастомизация");
+                  setIsDialogOpen(true);
+                }}
                 className="text-gold hover:underline font-semibold hover:text-amber-600 transition-colors"
               >
                 Свяжитесь с нами
@@ -220,14 +233,17 @@ const Pricing = () => {
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogContent className="sm:max-w-md">
             <DialogHeader>
-              <DialogTitle>Отправить заявку</DialogTitle>
+              <DialogTitle>
+                {selectedPackage === "Кастомизация"
+                  ? "Запрос кастомизации"
+                  : `Заявка на пакет "${selectedPackage}"`}
+              </DialogTitle>
             </DialogHeader>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <Label htmlFor="name">Имя *</Label>
+                <Label htmlFor="name">Имя</Label>
                 <Input
                   id="name"
-                  required
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -247,11 +263,10 @@ const Pricing = () => {
                 />
               </div>
               <div>
-                <Label htmlFor="email">Email *</Label>
+                <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
                   type="email"
-                  required
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
