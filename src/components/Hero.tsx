@@ -135,8 +135,31 @@ const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-black mb-12 max-w-4xl mx-auto leading-relaxed">
-            Живые 3D-VR туры для отелей, гостиниц и вилл, где важно показать
-            атмосферу на 360°
+            Живые 3D-VR туры для отелей, гостиниц и вилл, где важно показать{" "}
+            <span
+              className="text-[#d4af37] font-medium"
+              style={{
+                textShadow: `
+                0 0 3px rgba(255, 255, 255, 1),
+                0 0 6px rgba(255, 255, 255, 0.9),
+                0 0 12px rgba(255, 255, 255, 0.8),
+                1px 1px 0 rgba(255, 255, 255, 0.6),
+                -1px -1px 0 rgba(255, 255, 255, 0.6),
+                1px -1px 0 rgba(255, 255, 255, 0.5),
+                -1px 1px 0 rgba(255, 255, 255, 0.5),
+                2px 2px 0 rgba(255, 255, 255, 0.4),
+                -2px -2px 0 rgba(255, 255, 255, 0.4),
+                2px -2px 0 rgba(255, 255, 255, 0.3),
+                -2px 2px 0 rgba(255, 255, 255, 0.3),
+                3px 3px 0 rgba(255, 255, 255, 0.25),
+                -3px -3px 0 rgba(255, 255, 255, 0.25),
+                0 4px 8px rgba(255, 255, 255, 0.2)
+              `,
+              }}
+            >
+              атмосферу
+            </span>{" "}
+            на 360°
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
