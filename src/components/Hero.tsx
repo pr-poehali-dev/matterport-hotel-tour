@@ -110,20 +110,14 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-light leading-tight mb-8 max-w-6xl mx-auto text-black">
             Ваш интерьер уникален —{" "}
             <span
-              className="text-[#d4af37] font-medium"
+              className="text-[#d4af37] font-medium inline-block px-2 py-1 rounded"
               style={{
+                WebkitTextStroke: "1.5px #ffffff",
                 textShadow: `
-                0 0 1px rgba(255, 255, 255, 0.9),
-                1px 1px 0 rgba(255, 255, 255, 0.4),
-                -1px -1px 0 rgba(255, 255, 255, 0.4),
-                1px -1px 0 rgba(255, 255, 255, 0.3),
-                -1px 1px 0 rgba(255, 255, 255, 0.3),
-                2px 2px 0 rgba(255, 255, 255, 0.2),
-                -2px -2px 0 rgba(255, 255, 255, 0.2),
-                2px -2px 0 rgba(255, 255, 255, 0.15),
-                -2px 2px 0 rgba(255, 255, 255, 0.15),
-                0 2px 2px rgba(255, 255, 255, 0.1)
-              `,
+                  0 0 4px rgba(255, 255, 255, 0.8),
+                  0 2px 6px rgba(0, 0, 0, 0.2)
+                `,
+                background: "rgba(255, 255, 255, 0.15)",
               }}
             >
               покажите его по-настоящему
