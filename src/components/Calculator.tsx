@@ -8,11 +8,11 @@ const Calculator = () => {
 
   const calculatePrice = (area: number) => {
     if (area <= 0) return 0;
-    
+
     const basePrice = area * 150; // 150₽ за м²
     const bonusCount = Math.floor(area / 500); // количество бонусов по 500м²
     const bonusPrice = bonusCount * 10000; // 10000₽ за каждые 500м²
-    
+
     return basePrice + bonusPrice;
   };
 
@@ -21,13 +21,23 @@ const Calculator = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 relative overflow-hidden">
       {/* Декоративный фон */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
-      
+      <div className="absolute inset-0 opacity-20">
+        <div
+          className="w-full h-full bg-repeat bg-center"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        ></div>
+      </div>
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-white">Калькулятор стоимости</h2>
+          <h2 className="text-4xl font-bold mb-4 text-white">
+            Калькулятор стоимости
+          </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Узнайте примерную стоимость виртуального тура для Вашего пространства
+            Узнайте примерную стоимость виртуального тура для Вашего
+            пространства
           </p>
         </div>
 
@@ -40,7 +50,10 @@ const Calculator = () => {
             </CardHeader>
             <CardContent className="space-y-6">
               <div>
-                <Label htmlFor="area" className="text-lg font-medium text-gray-700">
+                <Label
+                  htmlFor="area"
+                  className="text-lg font-medium text-gray-700"
+                >
                   Площадь объекта (м²)
                 </Label>
                 <Input
