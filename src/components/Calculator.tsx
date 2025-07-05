@@ -10,8 +10,7 @@ const Calculator = () => {
     if (area <= 0) return 0;
 
     const basePrice = area * 150; // 150₽ за м²
-    const bonusCount = Math.floor(area / 500); // количество бонусов по 500м²
-    const bonusPrice = bonusCount * 10000; // 10000₽ за каждые 500м²
+    const bonusPrice = area <= 500 ? 10000 : 0; // 10000₽ если площадь до 500м²
 
     return basePrice + bonusPrice;
   };
