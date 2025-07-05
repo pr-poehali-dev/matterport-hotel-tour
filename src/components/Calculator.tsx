@@ -73,10 +73,7 @@ const Calculator = () => {
                       {totalPrice.toLocaleString()} ₽
                     </div>
                     <div className="text-gray-600 text-lg">
-                      Примерная стоимость виртуального тура
-                    </div>
-                    <div className="text-sm text-gray-500 mt-2">
-                      150₽/м² + 10 000₽ за каждые 500м²
+                      Стоимость виртуального тура
                     </div>
                   </div>
                 </div>
