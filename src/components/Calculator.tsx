@@ -9,6 +9,9 @@ const Calculator = () => {
   const calculatePrice = (area: number) => {
     if (area <= 0) return 0;
 
+    // Фиксированная стоимость до 100м²
+    if (area <= 100) return 25000;
+
     const basePrice = area * 150; // 150₽ за м²
     const bonusCount = Math.ceil(area / 500); // количество блоков по 500м²
     const bonusPrice = bonusCount * 10000; // 10000₽ за каждый блок 500м²
