@@ -40,6 +40,46 @@ const Partners = () => {
       logo: "https://cdn.poehali.dev/files/253bd0c3-7a3b-406d-a6f7-69b017f98d39.png",
       alt: "Фитнес клуб ROCK logo",
     },
+    {
+      name: "Салон дверей",
+      logo: "https://cdn.poehali.dev/files/b8aebd35-70ef-4b43-982f-4038d762e647.png",
+      alt: "Салон дверей logo",
+    },
+    {
+      name: "Флигель",
+      logo: "https://cdn.poehali.dev/files/3de7f183-b607-4480-baa8-a654909f0a12.png",
+      alt: "Флигель logo",
+    },
+    {
+      name: "Искусство быть",
+      logo: "https://cdn.poehali.dev/files/618a6483-d40d-418f-a1ae-758a59a12f1b.png",
+      alt: "Искусство быть logo",
+    },
+    {
+      name: "ВДК",
+      logo: "https://cdn.poehali.dev/files/c523c61c-0dd4-4af7-9892-e15de4c63382.png",
+      alt: "ВДК logo",
+    },
+    {
+      name: "33 Штукатура",
+      logo: "https://cdn.poehali.dev/files/e96e454d-536d-4079-9718-e0b3cda88f04.png",
+      alt: "33 Штукатура logo",
+    },
+    {
+      name: "Body Dream",
+      logo: "https://cdn.poehali.dev/files/22ee165d-95dc-4192-a545-de27c498cd8d.png",
+      alt: "Body Dream logo",
+    },
+    {
+      name: "Плещеево Хиллз",
+      logo: "https://cdn.poehali.dev/files/895800f7-57c3-4c7a-8b82-bff06a7def9a.png",
+      alt: "Плещеево Хиллз logo",
+    },
+    {
+      name: "Дом-Термо",
+      logo: "https://cdn.poehali.dev/files/a199aa57-cf7d-4c27-8d0f-579145affa54.png",
+      alt: "Дом-Термо logo",
+    },
   ];
 
   return (
