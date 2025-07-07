@@ -98,7 +98,7 @@ const Partners = () => {
           {partners.map((partner, index) => (
             <div
               key={index}
-              className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 h-24"
+              className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 h-32"
             >
               <img
                 src={partner.logo}
