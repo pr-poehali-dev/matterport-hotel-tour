@@ -1,9 +1,9 @@
 const Partners = () => {
   const partners = [
     {
-      name: "DONGFENG",
-      logo: "https://cdn.poehali.dev/files/24450761-7cda-4f34-bf6a-54cef43fdf79.png",
-      alt: "Dongfeng logo",
+      name: "Дом-Тепло",
+      logo: "https://cdn.poehali.dev/files/6de6cc02-f070-4465-992e-7a9ccb5deace.png",
+      alt: "Дом-Тепло logo",
     },
     {
       name: "Lake House",
