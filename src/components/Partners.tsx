@@ -32,7 +32,7 @@ const Partners = () => {
     },
     {
       name: "AvaCan",
-      logo: "https://cdn.poehali.dev/files/74b44295-13fb-4541-80af-96a3cda287b1.png",
+      logo: "https://cdn.poehali.dev/files/20f430c3-2f75-43a5-9079-164879a0af9b.jpg",
       alt: "AvaCan logo",
     },
     {
