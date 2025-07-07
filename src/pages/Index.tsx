@@ -6,6 +6,7 @@ import Testimonials from "@/components/Testimonials";
 import WorkProcess from "@/components/WorkProcess";
 import Pricing from "@/components/Pricing";
 import Calculator from "@/components/Calculator";
+import Partners from "@/components/Partners";
 import FinalCTA from "@/components/FinalCTA";
 import MessengerButtons from "@/components/MessengerButtons";
 
@@ -32,6 +33,7 @@ const Index = () => {
       <div id="calculator">
         <Calculator />
       </div>
+      <Partners />
       <div id="contacts">
         <FinalCTA />
       </div>
